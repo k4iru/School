@@ -1,0 +1,224 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Assignment 1}
+\date{Feburary 4, 2018}
+\author{Kyle Cheung}
+
+\begin{document}
+
+\maketitle
+\pagenumbering{gobble}
+\newpage
+\pagenumbering{arabic}
+
+\section{}
+\subsection{}
+
+First we form a system of equations by multiplying each instruction by how many clock cycles it uses. We set Load instruction clock cycles to be y, store clock cycles to z and the speed of program 1 to x. We know that program 2 and 3 are 2 and 3 times slower respectively, thus
+\begin{align*}
+  x &= 500y + 200z + 850\\
+  2x &= 1330y + 200z + 850\\
+  3x &= 500y + 2275z + 850
+\end{align*}
+Solving this system of equations yields that Load instruction uses 5 clock-cycles and Store instruction uses 4 clock-cycles
+
+\subsection{}
+\begin{equation*}
+  CPI = \frac{700}{1450} * 1 + \frac{500}{1450} * 5 + \frac{200}{1450} * 4 + \frac{50}{1450} * 3
+\end{equation*}
+
+\begin{equation*}
+  CPI = 2.86
+\end{equation*}
+
+\begin{equation*}
+  Execution Time = \frac{Instruction Count * CPI}{Clock Rate}
+\end{equation*}
+
+\begin{equation*}
+  Execution Time = \frac{1450 * 2.86}{3,000,000,000}
+\end{equation*}
+
+\begin{equation*}
+  Execution Time = 0.00000138333
+\end{equation*}
+
+\subsection{}
+
+\begin{equation*}
+  Load Store Instructions = \frac{700}{1450}
+\end{equation*}
+
+Memory Stall Cycle = 1 * Instructions cache Miss Rate * Miss Penalty + \\Load Store Instructions * Data-cache miss rate * Miss Penalty
+
+\begin{equation*}
+  Memory Stall Cycle = 1 *.02 * 100 + \frac{14}{29} *.03 * 100
+\end{equation*}
+
+\begin{equation*}
+  Memory Stall Cycle = 3.4483
+\end{equation*}
+
+\begin{equation*}
+  CPU-Time = \frac{Total Instruction Count * (CPI + Miss Cycle)}{3,000,000,000}
+\end{equation*}
+
+therefore exection time including memory stalls is 0.00000305
+
+\section{}
+
+\subsection{}
+
+\begin{equation*}
+  Global Miss Rate =.05*.08*.10
+\end{equation*}
+
+\begin{equation*}
+  Global Miss Rate =.0004
+\end{equation*}
+
+\subsection{}
+
+AMAT = time for hit + miss rate * miss penalty
+
+\begin{equation*}
+  AMAT = 1+(1-.95)(4+(1-.92)(8+(1-.9)(15)))
+\end{equation*}
+
+\begin{equation*}
+  AMAT = 1.238
+\end{equation*}
+
+\subsection{}
+
+Since the hit rate of L3 is 100\% we can remove the miss penalty from it in the AMAT formula
+
+\begin{equation*}
+  AMAT = 1+(1-.95)(4+(1-.92)(8))
+\end{equation*}
+
+\begin{equation*}
+  AMAT = 1.232
+\end{equation*}
+
+\begin{equation*}
+  CPI-stall = 1.232 *.78 + 3
+\end{equation*}
+
+\begin{equation*}
+  CPI-stall = 3.961
+\end{equation*}
+
+\section{}
+
+\subsection{}
+total cache misses = $\frac{2^{20}}{16}$\\
+total cache hits = $2^{20}*2 - \frac{2^{20}}{16}$\\
+This program has spatial locality, it's cache misses are cold and capacity.
+
+\subsection{}
+total cache misses = $\frac{2^{12}}{16}$\\
+total cache hits = $2^{20}*2 - \frac{2^{12}}{16}$\\
+This program has spatial and temporal locality, it has cold cache misses.
+
+\subsection{}
+total cache misses = $\frac{2^{20}}{16}$\\
+total cache hits = $2^{20} * 2 - \frac{2^{20}}{16}$\\
+This program has spatial locality, it has cold and capacity cache misses.
+
+\subsection{}
+total cache misses = $2^{19}*4$\\
+total cache hits = $0$\\
+This program has no locality displayed, it has cold and capicty cache misses
+
+\section{}
+
+\subsection{}
+For my computer the best block values I had were\\
+BLOCK\_X = 64\\
+BLOCK\_Y = 32\\
+BLOCK\_Z = 1024\\
+
+\subsection{}
+The two programs allocate memory then create and multiple matrices. The Naive version does a brute force method that just loops straight through the values and multiplys them. The tiled version creates blocks based on the block sizes and iterates through them calling them into cache. Then the blocks still in cache are operated on first, taking advantage of locality and cache.
+
+
+\subsection{}
+
+4 cores 
+
+\begin{verbatim}
+processor       : 0
+vendor_id       : GenuineIntel
+cpu family      : 6
+model           : 142
+model name      : Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+stepping        : 9
+microcode       : 0x42
+cpu MHz         : 698.821
+cache size      : 3072 KB
+physical id     : 0
+siblings        : 4
+core id         : 0
+cpu cores       : 2
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 22
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti intel_pt tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp
+bugs            : cpu_meltdown
+bogomips        : 5426.00
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 39 bits physical, 48 bits virtual
+power management:
+\end{verbatim}
+
+\subsection{}
+The tile version is faster. The tiled version uses cache blocks to reduce memory access time while the naive version just iterates over the loop.
+
+\section{}
+
+\subsection{}
+\begin{tabular}{l | r }
+  \hline
+  Address & Hit/Miss\\
+  4 &  miss \\
+  194 &  miss \\
+  46 &  miss \\
+  6 & miss \\
+  196 & miss \\
+  94 & miss \\
+  197 & hit \\
+  22 & miss \\
+  6 & miss \\
+  54 & miss \\
+  195 & hit \\
+  265 & miss \\
+  \hline  
+\end{tabular}
+
+\subsection{}
+
+\begin{tabular}{l | r }
+  \hline
+  Address & Hit/Miss\\
+  4 &  miss \\
+  194 &  miss \\
+  46 &  miss \\
+  6 & miss \\
+  196 & miss \\
+  94 & miss \\
+  197 & hit \\
+  22 & miss \\
+  6 & hit \\
+  54 & miss \\
+  195 & hit \\
+  265 & miss \\
+  \hline  
+\end{tabular}
+
+
+\end{document}
