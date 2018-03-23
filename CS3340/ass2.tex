@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{algorithmic}
+
+\title{Assignment 2}
+\date{March 15, 2018}
+\author{Kyle Cheung}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\newpage
+\pagenumbering{arabic}
+
+
+\section*{Question 1}
+makeSet = n\\
+union = $m - c$\\
+find = $4m -2c + n$\\
+\\
+makeSet is for every person in set S so it is called n times.\\
+\\
+union is called at least m times, but we have to subtract the connected components\\
+\\
+find is called twice for each pair to check if they are in the same component and then another two times in union. It is finally called again n times at the end of the algorithm to output each persons connected components\\
+\\
+\section*{Question 2} 
+\begin{algorithmic}
+  \STATE$size\gets n-1$
+  \STATE$left\gets 0$
+  \WHILE{$left\leq size$}
+  \WHILE{$A[left] \% 2 = 0$}
+  \STATE$left++$
+  \ENDWHILE{}
+  \WHILE{$A[size] \% 2 = 1$}
+  \STATE$right--$
+  \ENDWHILE{}
+  \STATE$temp = A[left]$
+  \STATE$A[left] = A[size]$
+  \STATE$A[SIZE] = A[LEFT]$
+\end{algorithmic}
+
+\section*{Question 3}
+First create n empty buckets for all n integers, then for every element in the array insert $A[i]$ into the $Bucket[A[i]]$. Sort each bucket using insertion sort then concatenate the sorted buckets. This results in an O(n) sorting algorithm
+
+\section*{Question 4}
+
+C-10.8\\
+\\
+see below, because there is a globally optimal solution this method is disproved since the one below is more optimal.\\
+\\
+
+C-10.9 \\
+\\
+Suppose there is some strategy that is more optimal\\
+Let it be represented by O = $(m_{k}, s_{j})$
+Let our greedy solution be represented by G $(m_{i}, s_{i})$\\
+then, \\
+$m_{i} - s_{i} > m_{k} - s{j}$\\
+
+
+
+
+\section*{Question 5}
+
+The recurrence time of the algorithm is $T(n) = 3T(\frac{2}{3}) + 1$\\
+Since $log\sub{\frac{2}{3}}3 = ~ 2.70$\\
+and $1 < 2.70$\\
+using the master theorem this is case 1\\
+so,\\
+O(n^{2.70})
+
+\section*{Question 6}
+
+\begin{algorithmic}
+  \STATE$mergesort(A)$
+  \STATE$l = 0$
+  \STATE$r = A.size$
+  \WHILE{l < r}
+  \IF{$A[l] + A[r] = sum$}
+  \STATE$return 1$
+  \ELSIF{$A[l] + A[r] < sum$}
+  \STATE$l++$
+  \ELSE
+  \STATE$l--$
+  \ENDWHILE
+
+
+\end{algorithmic}
+
+\section*{Question 7}
+
+\begin{center}
+  \begin{tabular}{|l||cccc|}
+    \hline
+    Edit Distance & English & Italian & Spanish & Portuguese\\
+    \hline
+    \hline
+    English & 0 & 105 & 99 & 97\\
+    \hline
+    Italian & x & 0 & 87 & 93\\
+    \hline
+    Spanish & x & x & 0 & 70\\
+    \hline
+    Portuguese & x & x & x & 0\\
+    \hline
+  \end{tabular}
+\end{center}
+\begin{verbatim}
+optimal alignment: 
+
+ACATACGATACAGACGATCGGCTAGAATCCACCAGCTACAGCTAG-T-C---GATACA-G
+|||||||||||  | ||  |||||||||||||||||||||||||| | |   |||  | |
+ACATACGATAC--A-GA--GGCTAGAATCCACCAGCTACAGCTAGTTACAAGGATCGATG
+
+CACGAATCGCTAAACAG-CTCGATCGATCGCTAGCTGATCGATACTTACCACAGCTGATC
+||||||   |||||||| || | |   ||||||||||||||||||||||||||||| |  
+CACGAA---CTAAACAGACTAG-TTTCTCGCTAGCTGATCGATACTTACCACAGCTAAAA
+
+GATGCTATT-TAGCTAGCT-CGTAGTA
+||||||||| | |  ||||   |  ||
+GATGCTATTATTG-GAGCTAATTTTTA
+
+edit distance = 34
+
+
+
+optimal alignment: 
+
+once upon- -a time
+|| || ||| |  | | |
+on-e -pony is mine
+
+edit distance = 7
+
+
+
+optimal alignment: 
+
+I can't remember if I cried When I read a-bout -his- --wi-do
+ |     |||     ||  |   | | |   |  | |  ||     |   | |   |   
+o puedo recordar si llor-e- Cuando le-i acerca de su novia q
+                                                                                                                       
+we-d-- b--ri-de -But --so-me-t---hing touched me deep inside                                                           
+ | |   |   | | |    |   | || |       |      | ||   | |                                                                 
+ue dejaba viuda Pero algo me toco muy profundame-nte- El dia                                                           
+                                                                                                                       
+ The day the music- -died                                                                                              
+|  || |     |||||| |                                                                                                   
+ que la----- musica murio                                                                                              
+                                                                                                                       
+edit distance = 99                                                                                                     
+\end{verbatim}
+                  
+\end{document}
