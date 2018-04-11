@@ -18,6 +18,24 @@
 \newpage
 \pagenumbering{arabic}
 
+\section*{Question 1}
+
+\begin{algorithmic}
+\State $findChom(String)$
+\State $s\gets String$
+\For{S[i,i+1] in S}
+\If{S[i,i+1] = LR/SR/LA/SS}
+\State $replace$
+\State $findChom(newString)$
+\EndIf
+\EndFor
+\end{algorithmic}
+
+String w = (())()= LLRRLR
+
+$S \rightarrow SS\rightarrow SLR\rightarrow LALR\rightarrow LSRLR \rightarrow LLRRLR$
+
+
 \section*{Question 2}
 
 \begin{algorithmic}
@@ -55,10 +73,60 @@ A-16.1. Allow all residents without a puppy to like all the dogs they prefer and
 
 A-16.2. Allow all residents without 3 puppies to like all the dogs they prefer and add them to the residents priority list. if the puppy has not yet been adopted yet and no one has liked the puppy then that puppy is adopted and this ends the round. If a dog has multiple likes they are adopted by whoever has liked the least amount of puppies. this continues until each resident has had 3 puppies.
 
-/section*{Question 7}
+\section*{Question 6}
+
+Using the same equation as the birthday problem just changing the number of days in a year to the possible number of combinations which in this case for a 3 digit lock would be 999.
+therefore we can calculate that the minimum number of apartments to have a greater than 50% change of having the same pin is 38 apartments. 
 
 
 
+\section*{Question 7}
+
+\begin{verbatim}
+text: "Dostoyevsky.txt"
+pattern: "the"
+occurrences: 11411
+Suffix Array: 0.000160932540894s
+Brute Force: 0.200074911118s
+Boyer-Moore: 0.27873301506s
+text: "Dostoyevsky.txt"
+pattern: "Raskolnikov"
+occurrences: 784
+Suffix Array: 0.00032901763916s
+Brute Force: 0.185318946838s
+Boyer-Moore: 0.0860641002655s
+text: "Dostoyevsky.txt"
+pattern: "dishevelled"
+occurrences: 1
+Suffix Array: 0.000158786773682s
+Brute Force: 0.191564083099s
+Boyer-Moore: 0.0762679576874s
+vw CS3340 $ python patternMatching.py E.coli.txt E.coli.sa E.coli.pat
+text: "E.coli.txt"
+pattern: "AAA"
+occurrences: 104915
+Suffix Array: 0.000204086303711s
+Brute Force: 0.827691078186s
+Boyer-Moore: 1.1095290184s
+text: "E.coli.txt"
+pattern: "ACGT"
+occurrences: 13733
+Suffix Array: 0.000188112258911s
+Brute Force: 0.751274108887s
+Boyer-Moore: 1.87848210335s
+text: "E.coli.txt"
+pattern: "NNNNNNNNNNNNNNNNNNNNNNNNNNN"
+occurrences: 11406
+Suffix Array: 0.000174999237061s
+Brute Force: 0.70400595665s
+Boyer-Moore: 0.176497936249s
+text: "E.coli.txt"
+pattern: "ATATCAGTTATATTTAAACTAAATTAAAGTCATGAATAAT"
+occurrences: 1
+Suffix Array: 0.000186920166016s
+Brute Force: 0.822018861771s
+Boyer-Moore: 0.646251916885s
+\end{verbatim}
 
 
 
