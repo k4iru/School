@@ -1,4 +1,11 @@
 \documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\newcommand{\var}[1]{\mathit{#1}}
+\newcommand{\func}[1]{\mathrm{#1}}
 
 \title{Assignment 3}
 \date{April 10, 2018}
@@ -11,8 +18,48 @@
 \newpage
 \pagenumbering{arabic}
 
-\section{Section}
+\section*{Question 2}
 
-Hello World
+\begin{algorithmic}
+\State $Input G$
+\State $G'$
+\While{there are vertices in G}
+\State $a\gets SCC(G)$
+\Comment{where {u,v} is an element of a}
+\State $G'.add(a,{u,v})$
+\EndWhile
+\State $Topological Sort(G')$
+\For{i less than number of Vertices}
+\If{$!G'.hasEdge(vi,vi+1)$}
+\State $false$
+\EndIf
+\EndFor
+\State $true$
+\end{algorithmic}
+
+If the graph is semi connected for a pair (u,v) such that there is a path from u to v, Let V and U be there SCC. Since all nodes are strongly connected, there must be a path from v to u.
+
+\section*{Question 3}
+
+Create a queue of buckets sorted by their distance value such that vertex v can be found in bucket d[v]. Scan the buckets, when a non-empty bucket is found, remove the first vertex and relax all adjacent vertices. Repeat the process until queue is done. Since we relax a total of E edges, the running time is O(V+E).
+
+\section*{Question 4}
+
+Essentially we would like to create a minimally spanning tree. For example we could use Kruskals Algorithm, where n stations are represented as vertices and the path from one station to the next is represented as an Edge using the energy required to transfer data as the edges weight. Using this method we can easily calculate how to connect each station such that we use the minimal amount of energy.
+
+\section*{Question 5}
+
+
+A-16.1. Allow all residents without a puppy to like all the dogs they prefer and add them to that residents priority list. If the puppy has not yet been adopted and no one has liked the puppy then the puppy is adopted by the resident and the round ends. If a puppy has multiple likes then they are adopted by whoever has the least amount of liked puppies This continues until each resident is matched.
+\section*{}
+
+A-16.2. Allow all residents without 3 puppies to like all the dogs they prefer and add them to the residents priority list. if the puppy has not yet been adopted yet and no one has liked the puppy then that puppy is adopted and this ends the round. If a dog has multiple likes they are adopted by whoever has liked the least amount of puppies. this continues until each resident has had 3 puppies.
+
+/section*{Question 7}
+
+
+
+
+
 
 \end{document}
