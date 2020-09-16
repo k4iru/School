@@ -1,0 +1,19 @@
+html {
+    max-width: 50%;
+    margin: auto;
+    background-color: #a8dadc;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+th {
+    text-align: left;
+}
+
+td, th {
+    padding: 0 2px;
+}
+
+
