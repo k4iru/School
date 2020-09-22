@@ -12,7 +12,7 @@ namespace assign1_n01446543.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "value1\n", "value2\n" };
         }
 
         // GET api/values/5
