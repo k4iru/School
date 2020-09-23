@@ -10,9 +10,9 @@ namespace assign1_n01446543.Controllers
 {
     public class HostingCostController : ApiController
     {
-        // tried returning a string and List<string> but couldn't get them to linebreak. HttpResponseMessage was the only thing 
-        // that worked though it outputs the xml namespace.
-        public HttpResponseMessage Get(int id) 
+
+
+        public List<string> Get(int id) 
         {
             int fortnights = 0;
             double hst = 0.13;
@@ -32,20 +32,12 @@ namespace assign1_n01446543.Controllers
             taxes = Math.Round(subTotal * hst, 2);
             total = Math.Round(subTotal + taxes, 2);
 
-
             // build up the list of strings
-            list.Add($"\n{fortnights} fortnights at ${priceOfFortnight.ToString("0.00")} = ${subTotal.ToString("0.00")} CAD");
+            list.Add($"{fortnights} fortnights at ${priceOfFortnight.ToString("0.00")} = ${subTotal.ToString("0.00")} CAD");
             list.Add($"HST 13% = ${taxes} CAD");
             list.Add($"Total = ${total} CAD");
-
-            // join strings and add a line break between each one
-            var result = String.Join("\n", list.ToArray());
-
-            // creates a plain text http response message so that each string is on a new line
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, result);
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/plain");
             
-            return response;
+            return list;
         }
     }
 }
