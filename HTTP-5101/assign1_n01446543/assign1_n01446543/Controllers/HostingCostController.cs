@@ -11,9 +11,15 @@ namespace assign1_n01446543.Controllers
     public class HostingCostController : ApiController
     {
 
-
-        public List<string> Get(int id) 
+        /// <summary>
+        /// Calculates the cost of hosting for however many fortnights
+        /// </summary>
+        /// <param name="id">int days</param>
+        /// <returns>list of strings that with hosting cost details</returns>
+        public List<string> Get(int days) 
         {
+
+            // variables
             int fortnights = 0;
             double hst = 0.13;
             double priceOfFortnight = 5.50;
@@ -24,11 +30,12 @@ namespace assign1_n01446543.Controllers
 
             List<string> list = new List<string>();
 
-            // dividing ints truncates values
-            remainder = id / 14;
+            // dividing ints truncates values giving us floor division
+            remainder = days / 14;
             fortnights += remainder;
             subTotal = (fortnights * priceOfFortnight) + priceOfFortnight;
 
+            // 2 decimal points
             taxes = Math.Round(subTotal * hst, 2);
             total = Math.Round(subTotal + taxes, 2);
 
