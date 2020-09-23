@@ -1,14 +1,14 @@
 -- 1.
 SELECT * 
 FROM invoice 
-    WHERE billingstate NOT NULL AND InvoiceId >= 400 
+    WHERE billingstate IS NOT NULL AND InvoiceId >= 400 
     ORDER BY InvoiceId DESC
 
 -- 2.
 SELECT * 
 FROM employee 
-    ORDER BY Birthdate DESC 
     LIMIT 10 OFFSET 2
+    ORDER BY Birthdate DESC 
 
 -- 3.
 SELECT DISTINCT LOWER(city) AS 'cities' 
