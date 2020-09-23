@@ -1,2 +1,5 @@
 /HTTP-5101/assign1_n01446543/packages
 /HTTP-5101/assign1_n01446543/.vs
+*.dll
+*.pdb
+*.cache
