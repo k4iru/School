@@ -14,16 +14,16 @@ namespace assign1_n01446543.Controllers
         /// <summary>
         /// Calculates the cost of hosting for however many fortnights
         /// </summary>
-        /// <param name="id">int days</param>
-        /// <returns>list of strings that with hosting cost details</returns>
+        /// <param name="id">int number</param>
+        /// <returns>list of strings with hosting cost details</returns>
         public List<string> Get(int id) 
         {
 
             // variables
             int fortnights = 0;
+            int remainder;
             double hst = 0.13;
             double priceOfFortnight = 5.50;
-            int remainder;
             double subTotal;
             double taxes;
             double total;
