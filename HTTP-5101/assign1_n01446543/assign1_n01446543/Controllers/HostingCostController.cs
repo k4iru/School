@@ -12,7 +12,7 @@ namespace assign1_n01446543.Controllers
     {
 
         /// <summary>
-        /// Calculates the cost of hosting for however many fortnights
+        /// Calculates the cost of hosting a number of fortnights
         /// </summary>
         /// <param name="id">int number</param>
         /// <returns>list of strings with hosting cost details</returns>

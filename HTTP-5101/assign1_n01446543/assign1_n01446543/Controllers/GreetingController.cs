@@ -12,8 +12,8 @@ namespace assign1_n01446543.Controllers
         /// <summary>
         /// greets a number of  people
         /// </summary>
-        /// <param name="id">number of people to greet</param>
-        /// <returns>string</returns>
+        /// <param name="id">int number</param>
+        /// <returns>A string</returns>
         public string Get(int id)
         {
             return $"Greetings to {id} people!";
@@ -22,7 +22,7 @@ namespace assign1_n01446543.Controllers
         /// <summary>
         /// print hello world for a post request
         /// </summary>
-        /// <returns>string</returns>
+        /// <returns>A string</returns>
         public string Post()
         {
             return "Hello World!";
