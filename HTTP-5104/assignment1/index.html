@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    <meta name="description" content="kyles blog site">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Site Name</h1>
+            <nav>
+                <h2 class="element-invisible"> Site Navigation</h2>
+                <ul>
+                    <li>Home</li>
+                    <li>Search</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Donate</li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main">
+            <section id="content">
+                <h2>Article title</h2>
+                <p class="date"></p>
+                <p class="blurb">blurb</p>
+                <div class="main-article-image"><img src="#" alt=""></div>
+                <p>para 1</p>
+                <div class="main-article-image"><img src="#" alt=""></div>
+                <p>para 2</p>
+                <div class="main-article-image"><img src="#" alt=""></div>
+                <p>para 3</p>
+            </section>
+            <section id="comments">
+                <h3>Comments</h3>
+                <p>Be the first to add a comment.</p>
+                <h3>Leave a Comment</h3>
+                <form method="POST" id="comment-form">
+                    <label for="comment-author" class="required">Name</label>
+                    <input id="comment-author" type="text" name="comment-author" value="" required="required">
+
+                    <label for="email" class="required">Email</label>
+                    <input id="email" type="email" name="email" value="" required="required">
+
+                    <label for="comment" class="required">Your Comment</label>
+                    <textarea id="comment" name="comment" required="required"></textarea>
+
+                    <input name="comment-submit" type="submit" value="Submit comment">
+
+                </form>
+            </section>
+            <footer>
+                <div>social media icons</div>
+                <p>tags</p>
+            </footer>
+
+
+        </main>
+
+        <!-- right side -->
+        <aside>
+            <h2 class="element-invisible">Site Aside</h2>
+            <section id="search">
+                <h3>Search Site</h3>
+                <form method="GET" id="search-form">
+                    <input type="text" name="search-bar" value="">
+                    <input name="search-submit" type="submit" value="Search">
+                </form>
+            </section>
+            <section id="aside-articles">
+                <h3>More Post</h3>
+                <ul>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                    <li>
+                        <img src="#" alt="">
+                        <p>blurb</p>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+
+        <footer>
+            <p>C2020</p>
+        </footer>
+    </div>
+</body>
+
+</html>
