@@ -14,7 +14,7 @@ namespace assign1_n01446543.Controllers
         /// <summary>
         /// Calculates the cost of hosting a number of fortnights
         /// </summary>
-        /// <param name="id">int number</param>
+        /// <param name="id">an integer representing the number of days hosted</param>
         /// <returns>list of strings with hosting cost details</returns>
         public List<string> Get(int id) 
         {
@@ -22,15 +22,20 @@ namespace assign1_n01446543.Controllers
             // variables
             int fortnights = 0;
             int remainder;
-            double hst = 0.13;
-            double priceOfFortnight = 5.50;
-            double subTotal;
-            double taxes;
-            double total;
+            Decimal hst = new Decimal(.13);
+            Decimal priceOfFortnight = new decimal(5.50);
+            decimal subTotal;
+            decimal taxes;
+            decimal total;
 
             List<string> list = new List<string>();
 
-            // dividing ints truncates values giving us floor division
+            if (id < 0)
+            {
+                list.Add("You entered negative days!");
+                return list;
+            }
+
             remainder = id / 14;
             fortnights += remainder;
             subTotal = (fortnights * priceOfFortnight) + priceOfFortnight;

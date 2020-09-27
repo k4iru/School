@@ -25,7 +25,8 @@ namespace assign1_n01446543.Controllers
         /// <returns>A string</returns>
         public string Post()
         {
-            return "Hello World!";
+            string res = "Hello World!";
+            return res;
         }
     }
 }

@@ -12,11 +12,12 @@ namespace assign1_n01446543.Controllers
         /// <summary>
         /// adds 10 to a number
         /// </summary>
-        /// <param name="id">int number</param>
+        /// <param name="id">an integer to add 10 to</param>
         /// <returns>An int</returns>
         public int Get(int id)
         {
-            return id + 10;
+            int res = id + 10;
+            return res ;
         }
     }
 }

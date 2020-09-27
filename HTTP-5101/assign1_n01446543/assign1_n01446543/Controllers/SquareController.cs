@@ -14,7 +14,8 @@ namespace assign1_n01446543.Controllers
     {
         public int Get(int id)
         {
-            return id * id;
+            int res = id * id;
+            return res;
         }
     }
 }
