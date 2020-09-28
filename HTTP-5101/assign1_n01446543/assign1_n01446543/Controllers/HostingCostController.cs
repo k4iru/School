@@ -41,8 +41,8 @@ namespace assign1_n01446543.Controllers
             subTotal = (fortnights * priceOfFortnight) + priceOfFortnight;
 
             // 2 decimal points
-            taxes = Math.Round(subTotal * hst, 2);
-            total = Math.Round(subTotal + taxes, 2);
+            taxes = Decimal.Multiply(subTotal,hst);
+            total = Decimal.Add(subTotal,taxes);
 
             // build up the list of strings
             list.Add($"{fortnights} fortnights at ${priceOfFortnight.ToString("0.00")} = ${subTotal.ToString("0.00")} CAD");
