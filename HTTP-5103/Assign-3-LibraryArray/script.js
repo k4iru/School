@@ -24,4 +24,7 @@ while (isNaN(bookChoice) || bookChoice > 10 || bookChoice < 1) {
 
 bookChoice = parseInt(bookChoice);
 alert(`Number ${bookChoice} on the list is ${bookArray[bookChoice-1]}`);
-console.log(bookArray);
+
+for (let i = 0; i < bookArray.length; i++) {
+    console.log(`Book ${i+1}: ${bookArray[i]}`);
+}
