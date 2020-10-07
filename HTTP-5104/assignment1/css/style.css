@@ -1,5 +1,9 @@
-.page-container {
-    max-width: 1200px;
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 /* 
@@ -13,4 +17,97 @@ https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
     clip: rect(1px 1px 1px 1px);
     /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px);
+}
+
+html {
+    background-color: #4E7791;
+}
+
+/* Layout */
+
+.page-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #3DA1E3;
+    overflow: hidden;
+    border-radius: 0.5em;
+    clear: both;
+}
+
+#main {
+    float: left;
+    width: 66%;
+}
+
+#aside {
+    float: right;
+    width: 33%;
+}
+
+header {
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer {
+    clear: both;
+}
+
+p {
+    line-height: 1.8rem;
+    padding: 1rem 0;
+}
+
+/* Header */
+
+nav li {
+    padding: 0 1em;
+    display: inline;
+    font-size: 1.1em;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 0;
+    padding: 0.5rem;
+}
+
+.logo>a {
+    text-decoration: none;
+    font-size: 2.5em;
+    letter-spacing: 0.35em;
+    text-align: center;
+    font-family: 'Shadows Into Light';
+    text-transform: capitalize;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+.logo {
+    text-align: center;
+}
+
+/* Aside */
+
+.more-posts-image {
+    width: 60px;
+    float: left;
+}
+
+#aside-articles a {
+    text-decoration: none;
+}
+
+#aside-articles ul {
+    list-style: none;
+}
+#aside-articles  ul  li {
+    clear: both;
 }
