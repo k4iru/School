@@ -10,7 +10,7 @@ namespace assign2_n01446543.Controllers
     public class J1Controller : ApiController
     {
         /// <summary>
-        /// compute the total calories of the meal
+        /// compute the total calories of the selected meal
         /// </summary>
         /// <param name="burger">An integer representing choice of burger</param>
         /// <param name="drink">An integer representing choice of drink</param>
@@ -27,6 +27,7 @@ namespace assign2_n01446543.Controllers
             string errorMessage = "Invalid input!";
             string message = "Your total calorie count is ";
 
+            // if any of the inputs are not between 1-4 then default to the errorMessage
             switch (burger)
             {
                 case 1:

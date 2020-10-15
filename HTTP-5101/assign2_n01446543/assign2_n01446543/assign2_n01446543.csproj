@@ -159,6 +159,7 @@
     <Compile Include="Controllers\J1Controller.cs" />
     <Compile Include="Controllers\J2Controller.cs" />
     <Compile Include="Controllers\J3Controller.cs" />
+    <Compile Include="Controllers\J4Controller.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
