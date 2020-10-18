@@ -1,0 +1,7 @@
+Fonts:
+Headings - Fira Code
+Paragraphs - Fjord
+
+Colors:
+Alternating Black and white backgrounds and font colors for high contrast.
+Background image for Landing page.
