@@ -14,5 +14,9 @@ namespace assign2_n01446543.Controllers
 
             return View();
         }
+        public ActionResult J1()
+        {
+            return View();
+        }
     }
 }
