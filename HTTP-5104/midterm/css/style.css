@@ -1,0 +1,31 @@
+/* General Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.2em;
+    font-size: 16px;
+    color: #202228;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4,h5,h6 {
+    color: black;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Header */
+
+.header-container {
+    width: 100%;
+    background-color: black;
+}
+
+header {
+    max-width: 1200px;
+    margin: auto;
+}
