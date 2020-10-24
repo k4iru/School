@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="header-container">
+    <div id="header-container">
         <header>
             <nav>
                 <h2><a href="#" title="Home" id="logo">Home<span id="logo-accent">Greenery</span></a></h2>
@@ -84,27 +84,60 @@
                 <h2>Stay Up to Date</h2>
                 <p>Get the latest gardening articles and tips by subscribing to our newsletters.</p>
                 <form>
-                    <label>Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john.smith@example.com">
 
                     <div id="interest-container">
                         <label id="interest-text">Your Interests</label>
 
                         <input type="checkbox" id="interest-1" name="interest-1" value="Tips">
                         <label for="interest-1">Tips</label>
-
+                        <span class="spacer"></span>
                         <input type="checkbox" id="interest-2" name="interest-2" value="News">
                         <label for="interest-2">News</label>
-
+                        <span class="spacer"></span>
                         <input type="checkbox" id="interest-3" name="interest-3" value="Tools">
                         <label for="interest-3">Tool</label>
+                        
                     </div>
-
+                    <input type="submit" value="Subscribe Now">
                 </form>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div id="footer-container">
+            <div class="col-4">
+                <ul>
+                    <li class="top-link-footer"><a href="#">Plants</a></li>
+                    <li><a href="#">Plant Index</a></li>
+                    <li><a href="#">Featured Plant</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li class="top-link-footer"><a href="#">Resources</a></li>
+                    <li><a href="#">Zone maps</a></li>
+                    <li><a href="#">Planting charts</a></li>
+                    <li><a href="#">Garden structures</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li class="top-link-footer"><a href="#">About</a></li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li class="top-link-footer"><a href="#">Legal</a></li>
+                    <li><a href="#">Terms and conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <p id="copyright">&#169; Copyright HomeGreenery, 2020. All rights reserved. This is a fake website for HTTPS5104.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
