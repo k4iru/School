@@ -1,5 +1,7 @@
 /* General Styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -13,7 +15,12 @@ html {
     background-color: #fff;
 }
 
-h1, h2, h3, h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: black;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -70,19 +77,20 @@ header ul {
 }
 
 nav {
-    padding: 1em 0 3.5em 0;
+    padding: 2em 0 4.5em 0;
 }
 
 header li {
     display: inline-block;
     padding: .5em .5em;
     margin: 0 .5em;
+    font-size: 1.1em;
 
 }
 
 #logo {
     float: left;
-    padding-top:.25em;
+    padding-top: .35em;
 }
 
 #logo:hover {
@@ -98,9 +106,12 @@ header li {
 }
 
 #sign-in {
-    color: #202228;
     background-color: #19c17e;
     border-radius: 0.5em;
+}
+
+#sign-in a {
+    color: #202228;
 }
 
 #sign-in a:hover,
@@ -152,7 +163,7 @@ section h2 {
 
 .col-2 {
     width: 50%;
-    padding: 2.5em 1em;
+    padding: 2em 1em 1em 1em;
 }
 
 /* Left Col */
@@ -180,9 +191,12 @@ section h2 {
 
 #registration {
     text-align: center;
-    padding-top: 3em;
+    padding-top: 2em;
 }
 
+.right-col p {
+    padding-bottom: 1em;
+}
 /* Section 2 */
 
 #section-2 {
@@ -190,7 +204,7 @@ section h2 {
     text-align: center;
     background-color: #defef1;
     overflow: hidden;
-    padding-bottom: 4em;
+    padding-bottom: 5em;
 }
 
 #section-2 h2 {
@@ -203,7 +217,7 @@ section h2 {
     width: 33%;
 }
 
-.col-3 h3 a{
+.col-3 h3 a {
     text-decoration: none;
     color: #397153;
 }
@@ -228,7 +242,7 @@ section h2 {
 /* Section 3 */
 
 #section-3 {
-    background-color:#01a765;
+    background-color: #01a765;
     padding: 3em 0 4em 0;
     text-align: center;
     margin: auto;
@@ -291,7 +305,7 @@ input[type="submit"] {
     font-size: 1em;
     background-color: #202228;
     color: #fff;
-    padding:.5em;
+    padding: .5em;
     border-radius: .7em;
     border: none;
 }
@@ -309,7 +323,7 @@ input[type="submit"]:hover {
 /* Footer */
 
 footer {
-    background-color:  #202228;
+    background-color: #202228;
 }
 
 .col-4 {
