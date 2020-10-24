@@ -19,17 +19,49 @@ h1, h2, h3, h4,h5,h6 {
     text-transform: uppercase;
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover,
+a:focus {
+    color: #19c17e;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.black-btn {
+    padding: .5em;
+    background-color: #202228;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .5em;
+}
+
+.black-btn:hover,
+.black-btn:focus {
+    background-color: #19c17e;
+    color: #fff;
+}
+
+.text-link {
+    color: #397153;
+}
+
+.text-link:hover,
+.text-link:focus {
+    color: #01a765;
+}
+
 /* Header */
 
 #header-container {
     width: 100%;
     background-color: black;
-}
-
-header {
-    max-width: 1200px;
-    margin: auto;
-    overflow: auto;
 }
 
 header ul {
@@ -39,12 +71,6 @@ header a {
     text-decoration: none;
     color: #fff;
 }
-
-nav > ul > li > a:hover,
-nav > ul > li > a:focus {
-    color: #19c17e;
-}
-
 
 nav ul {
     vertical-align: text-top;
@@ -64,6 +90,10 @@ header li {
 #logo {
     float: left;
     padding-top:.25em;
+}
+
+#logo:hover {
+    color: #fff;
 }
 
 #logo-accent {
@@ -90,8 +120,6 @@ header li {
 
 /* MAIN */
 #main {
-    max-width: 1200px;
-    margin: auto;
     background-color: #fff;
 }
 
@@ -138,10 +166,6 @@ section h2 {
     float: left;
 }
 
-.right-col {
-    float: right;
-}
-
 #potted-plant {
     width: 30%;
     float: left;
@@ -155,32 +179,14 @@ section h2 {
 }
 
 /* Right Col */
-.col-2 a {
-    color: #397153;
-}
 
-.col-2 a:hover,
-.col-2 a:focus {
-    color: #01a765;
+.right-col {
+    float: right;
 }
 
 #registration {
     text-align: center;
     padding-top: 3em;
-}
-
-#registration a {
-    padding: .5em;
-    background-color: #202228;
-    color: #fff;
-    text-decoration: none;
-    border-radius: .5em;
-}
-
-#registration a:hover,
-#registration a:focus {
-    background-color: #19c17e;
-    color: #fff;
 }
 
 /* Section 2 */
@@ -217,25 +223,12 @@ section h2 {
     padding-bottom: 1em;
 }
 
-.col img {
+.col-3 img {
     max-width: 100%;
 }
 
 .col-3 p {
     margin: 1em 0 2em 0;
-}
-
-.col-3 > a {
-    background-color:#202228;
-    color: #fff;
-    padding: .5em;
-    border-radius: .5em;
-    text-decoration: none;
-}
-
-.col-3 > a:hover,
-.col-3 > a:focus {
-    background-color: #19c17e;
 }
 
 /* Section 3 */
@@ -337,12 +330,6 @@ input[type="submit"]:hover {
 
 footer {
     background-color:  #202228;
-}
-
-#footer-container {
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
 }
 
 .col-4 {
