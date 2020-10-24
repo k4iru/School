@@ -59,6 +59,7 @@ a:focus {
 
 /* Header */
 
+/* Stretch header background across full width */
 #header-container {
     width: 100%;
     background-color: black;
@@ -66,14 +67,6 @@ a:focus {
 
 header ul {
     list-style: none;
-}
-header a {
-    text-decoration: none;
-    color: #fff;
-}
-
-nav ul {
-    vertical-align: text-top;
 }
 
 nav {
@@ -105,12 +98,9 @@ header li {
 }
 
 #sign-in {
+    color: #202228;
     background-color: #19c17e;
     border-radius: 0.5em;
-}
-
-#sign-in a {
-    color: #202228;
 }
 
 #sign-in a:hover,
@@ -119,6 +109,8 @@ header li {
 }
 
 /* MAIN */
+
+/* Banner */
 #main {
     background-color: #fff;
 }
@@ -137,6 +129,7 @@ header li {
 h1 span {
     display: block;
 }
+
 #title-text {
     width: 100%;
     position: absolute;
@@ -156,6 +149,7 @@ section h2 {
     color: #397153;
     padding-bottom: 1em;
 }
+
 .col-2 {
     width: 50%;
     padding: 2.5em 1em;
@@ -312,20 +306,6 @@ input[type="submit"]:hover {
     cursor: pointer;
 }
 
-.subscription-button {
-    display: inline-block;
-    margin-top: 2em;
-    padding: .5em;
-    text-decoration: none;
-    background-color: #202228;
-    color: #fff;
-    border-radius: 0.5em;
-}
-
-.subscription-button:hover {
-    color: #19c17e;
-}
-
 /* Footer */
 
 footer {
@@ -340,16 +320,6 @@ footer {
 .col-4 ul {
     padding: 1.5em;
     list-style: none;
-}
-
-.col-4 a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.col-4 a:hover,
-.col-4 a:focus {
-    color: #19c17e;
 }
 
 .top-link-footer {
