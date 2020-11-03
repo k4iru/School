@@ -259,25 +259,19 @@ section h2 {
     margin: auto;
 }
 
-#interest-container {
-    padding: .5em;
-    width: 85%;
-    position: relative;
-    border: 1px solid #fff;
-    margin: auto;
-}
-
-#interest-text {
-    position: absolute;
-    top: -0.75em;
-    left: .75em;
-    background-color: #01a765;
-    z-index: 100;
-}
-
 .spacer {
     display: inline-block;
     width: 6.5em;
+}
+
+fieldset {
+    padding: .25em 1em;
+    border-color: #fff;
+    box-shadow: none;
+}
+
+legend {
+    text-align: left;
 }
 
 input[type="email"] {
