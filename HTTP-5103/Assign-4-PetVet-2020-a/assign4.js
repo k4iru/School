@@ -48,26 +48,25 @@ function init() {
     btn.onclick = function () {
         displayPets(c1)
     };
+}
 
-    // function to display pets
-    function displayPets(customer) {
+// function to display pets
+function displayPets(customer) {
 
-        // find out how many pets client has
-        let n = customer.pets.length;
+    // find out how many pets client has
+    let n = customer.pets.length;
 
-        // clear petsDiv of any previous pets. prevents the list from growing indefinitely
-        let pets = document.getElementById('petDiv');
-        pets.innerHTML = "";
+    // clear petsDiv of any previous pets. prevents the list from growing indefinitely
+    let pets = document.getElementById('petDiv');
+    pets.innerHTML = "";
 
-
-        // loop for each pet the client has, creates a new p html tag with a class petP
-        // displays the pets name and type
-        for (let i = 0; i < n; i++) {
-            let node = document.createElement("p");
-            let text = document.createTextNode(`name: ${customer.pets[i].name} type: ${customer.pets[i].type}`);
-            node.appendChild(text);
-            node.className = 'petP';
-            pets.appendChild(node);
-        }
+    // loop for each pet the client has, creates a new p html tag with a class petP
+    // displays the pets name and type
+    for (let i = 0; i < n; i++) {
+        let node = document.createElement("p");
+        let text = document.createTextNode(`name: ${customer.pets[i].name} type: ${customer.pets[i].type}`);
+        node.appendChild(text);
+        node.className = 'petP';
+        pets.appendChild(node);
     }
 }
