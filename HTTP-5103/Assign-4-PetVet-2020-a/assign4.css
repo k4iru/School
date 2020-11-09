@@ -1,0 +1,29 @@
+h2{
+	background:#CA79BA;
+	color: #40263B;
+	text-align: center;	
+}
+#clientDiv{
+	margin: 25px;	
+}
+#clientName{
+	font-size: 1.5em;
+	color: #8D2A79;
+	font-family: monospace;
+	
+}
+#clientBtn{
+	background:#8D2A79;
+	color: #CA79BA;
+	text-align: center;
+	margin-left: 20px;
+	padding: 15px;	
+}
+
+.petP{
+	background: #faeff8;
+	color: #40263B;
+	width: 300px;
+	padding: 5px 30px;
+	font-family: monospace;
+}

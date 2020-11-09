@@ -1,0 +1,116 @@
+/* General Styles */
+
+/* 
+Colour Palette
+https://coolors.co/d0ffd6-ef2d56-fdecef-0f110c-00e8fc
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.2em;
+    font-size: 16px;
+    color: #202228;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover,
+a:focus {
+    color: #950714;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+
+/* Stretch header background across full width */
+#header-container {
+    width: 100%;
+    background-color: black;
+}
+
+header ul {
+    list-style: none;
+    display: inline-block;
+}
+
+nav {
+    padding: 2em 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+header li {
+    display: inline-block;
+    padding: .5em .5em;
+    margin: 0 .5em;
+    font-size: 1.1em;
+}
+
+.spacer {
+    flex: 1;
+}
+
+#logo {
+    display: inline-block;
+    padding: .5em;
+}
+
+#logo a:hover {
+    color: #fff;
+}
+
+#logo-accent {
+    color: #950714;
+}
+
+
+/* Footer */
+
+footer {
+    font-size: 0.75em;
+    background-color: #202228;
+    color: #fff;
+    padding: 2em;
+}
+
+.col-1 {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.col-1 li {
+    display: inline-block;
+    padding: 0 .75em;
+}
+
+.col-1 li:not(:first-child) {
+    border-left: 1px solid #fff;
+}
