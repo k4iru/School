@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search Students</h2>
+<form action="/Student/Show" method="POST">
+    <label for="studentId">Student Id</label>
+    <!--Having trouble implementing validation-->
+    <input name="studentId" type="text" />
+    <input type="submit" value="Search" />
+</form>

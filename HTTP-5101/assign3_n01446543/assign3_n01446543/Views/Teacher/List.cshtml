@@ -3,13 +3,25 @@
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
-<div id="containerList">
-    <h2>List of Authors Teachers</h2>
+<div class="container">
+    <h2>List of Teachers</h2>
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Teacher Name</h3>
+        </div>
+        <div class="col-sm-3">
+            <h3>Hire Date</h3>
+        </div>
+        <div class="col-sm-3">
+            <h3>Salary</h3>
+        </div>
+    </div>
     @foreach (var teacher in Model)
     {
-        <div class="listitme row">
-            <div class="col-md-12"><p>@teacher.teacherFname @teacher.teacherLname @teacher.hireDate</p></div>
+        <div class="row">
+            <div class="col-sm-3"><p>@teacher.teacherFname @teacher.teacherLname</p></div>
+            <div class="col-sm-3"><p>@teacher.hireDate.ToShortDateString()</p></div>
+            <div class="col-sm-3"><p>@teacher.salary</p></div>
         </div>
     }
 

@@ -3,8 +3,11 @@
     ViewBag.Title = "Show";
 }
 
-<h2>Show</h2>
+<h2>@Model.teacherFname @Model.teacherLname</h2>
 <div id="containerShow">
-    <h2>@Model.teacherFname @Model.teacherLname</h2>
+    <p>Employee Number: @Model.employeeNumber</p>
+    <p>Salary: $@Model.salary</p>
+    <p>Hire Date: @Model.hireDate.ToShortDateString()</p>
+    <p>Courses: @string.Join(", ", Model.courses)</p>
 </div>
 

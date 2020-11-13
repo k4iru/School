@@ -1,0 +1,11 @@
+﻿@model assign3_n01446543.Models.Student
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.studentFname @Model.studentLname</h2>
+<div id="containerShow">
+    <p>Student Number: @Model.studentNumber</p>
+    <p>Enrol Date: @Model.enrolDate.ToShortDateString()</p>
+</div>
+
