@@ -1,44 +1,51 @@
 -- 1.
 SELECT * 
-FROM invoice 
-    WHERE billingstate IS NOT NULL AND InvoiceId >= 400 
-    ORDER BY InvoiceId DESC
+FROM bikeTheft
+WHERE Neighbourhood 
+    LIKE '%Humber%'
 
 -- 2.
 SELECT * 
-FROM employee 
-    LIMIT 10 OFFSET 2
-    ORDER BY Birthdate DESC 
+FROM bikeTheft 
+WHERE Neighbourhood 
+    LIKE '%Humber%' AND (Occurrence_Year % 2) = 1
 
 -- 3.
-SELECT DISTINCT LOWER(city) AS 'cities' 
-FROM customer
+SELECT CONCAT('$',AVG(Cost_of_Bike)) AS 'Average Bike Cost' 
+FROM bikeTheft
 
--- 4.
-SELECT firstname, 
-    lastname, 
-    SUBSTR(lastname,3,1) AS '3rd letter of last name' 
-FROM customer 
-    WHERE firstname LIKE LOWER('%t%') OR LOWER(lastname) LIKE '%t%'
+--4. 
+SELECT COUNT(DISTINCT Bike_Colour, Bike_Speed)
+FROM bikeTheft
 
--- 5.
-SELECT REPLACE(name, 'ö',':)') 
-FROM artist 
-    WHERE name LIKE '%ö%'
+--5.
+SELECT Location_Type 
+FROM bikeTheft
+GROUP BY Location_Type 
+HAVING COUNT(*) > 500
 
--- 6.
-SELECT customerid, 
-    COALESCE(state, '') AS 'State', 
-    COALESCE(fax, '') AS 'Fax' 
-FROM customer
+--6.
+SELECT Min(Occurrence_Date) 
+FROM bikeTheft
 
--- 7.
-SELECT LOWER(SUBSTR(title,1,20)) AS 'Title' 
-FROM album 
-    WHERE LENGTH(title) > 20
+--7. 
+SELECT Neighbourhood, COUNT(Neighbourhood) 
+FROM bikeTheft 
+GROUP BY Neighbourhood 
+ORDER BY COUNT(Neighbourhood) DESC
+LIMIT 10
 
--- 8. 
-SELECT * 
-FROM invoice 
-    WHERE billingcity IN ('Berlin', 'Toronto') AND total > 5 
-    ORDER BY invoicedate DESC
+--8.
+SELECT SUM(Cost_of_Bike) / COUNT(*), AVG(Cost_of_Bike)
+FROM bikeTheft 
+
+--9.
+
+/*
+they are not the same because SUM() and AVG() automatically exclude NULL values while COUNT(*) includes NULL.
+The way to make AVG() get the same value as the first column is to first COALESCE() 
+the null values into 0's so that all rows are counted.
+*/
+
+SELECT SUM(Cost_of_Bike) / COUNT(*), AVG(COALESCE(NULL,Cost_of_Bike, 0))
+FROM bikeTheft 

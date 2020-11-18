@@ -1,76 +1,33 @@
 -- 1.
-INSERT INTO demo (
-        id,
-        `characters`,
-        dates,
-        decimalNumbers,
-        whole_numbers,
-        date_and_time
-    )
-VALUES (1, ' kyle', '2020-10-14', 1.1, 3, NOW()) 
-
+CREATE TABLE IF NOT EXISTS myTable (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    cur_time TIME,
+    cur_date DATE,
+    dec_num DECIMAL
+);
 -- 2.
-INSERT INTO demo
-VALUES (3, ' kyle', '2020-10-14', 1.1, 3, NOW()) 
-
+INSERT INTO myTable
+VALUES (NULL, NOW(), NOW(), 4),
+    (NULL, NOW(), NOW(), 1),
+    (NULL, NOW(), NOW(), 7);
 -- 3.
-INSERT INTO demo (
-        `characters`,
-        whole_numbers,
-        date_and_time
-    )
-VALUES ('jacob', 22, NOW()) 
-
+REPLACE INTO myTable
+VALUES (3, NOW(), NOW(), 22);
 -- 4.
-INSERT INTO demo
-VALUES (
-        3 + 1,
-        ' kyle',
-        '2020-10-14',
-        1.1 * 1,
-        3 / 3,
-        NOW()
-    ) 
-    
+UPDATE myTable
+SET id = 6
+WHERE id = 1;
 -- 5.
-INSERT INTO demo
-VALUES (NULL, ' kyle', NOW(), 1.1 * 1, 3 / 3, NOW()) 
-
+DELETE FROM myTable
+WHERE id = 3;
 -- 6.
-INSERT INTO demo
-VALUES (
-        NULL,
-        ' kyle',
-        NOW(),
-        1.1 * 1,
-        DATEDIFF('2020-02-14', NOW()),
-        NOW()
-    ) 
-
---7.
-INSERT INTO demo
-VALUES (
-        NULL,
-        ' kyle',
-        DATE_SUB(NOW(), INTERVAL 20 MONTH),
-        1.1 * 1,
-        DATEDIFF('2020-02-14', NOW()),
-        DATE_ADD(NOW(), INTERVAL 500 HOUR)
-    ) 
-
+ALTER TABLE myTable
+ADD whole_num INT NOT NULL;
+-- 7.
+ALTER TABLE myTable CHANGE whole_num new_num INT NOT NULL;
 -- 8.
-SELECT MONTHNAME(dates),
-    MONTHNAME(date_and_time)
-FROM demo d 
-
+ALTER TABLE myTable CHANGE new_num new_num_with_default INT NOT NULL DEFAULT 3;
 -- 9.
-SELECT CAST(decimalNumbers AS DECIMAL(5, 0))
-FROM demo d 
-
+ALTER TABLE myTable DROP new_num_with_default;
 -- 10.
-SELECT *
-FROM demo d
-WHERE EXTRACT(
-        MONTH
-        FROM date_and_time
-    ) = 10
+DROP TABLE myTable;

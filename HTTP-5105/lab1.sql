@@ -1,23 +1,44 @@
--- 1. What are the media types in the MediaType table?
-SELECT * FROM MediaType
+-- 1.
+SELECT * 
+FROM invoice 
+    WHERE billingstate IS NOT NULL AND InvoiceId >= 400 
+    ORDER BY InvoiceId DESC
 
--- 2. What are the employees' full names? Show this in a single column called "Employee Names"
-SELECT FirstName || ' ' || LastName AS 'Employee Names' From Employee
+-- 2.
+SELECT * 
+FROM employee 
+    LIMIT 10 OFFSET 2
+    ORDER BY Birthdate DESC 
 
--- 3. What's 987 plus 789, divided by 111? (Don't forget about BEDMAS!)
-SELECT (987 + 789) / 111
+-- 3.
+SELECT DISTINCT LOWER(city) AS 'cities' 
+FROM customer
 
--- 4. Who are all the customers in Brazil and Canada?
-SELECT * FROM Customer WHERE Country='Brazil' OR Country='Canada'
+-- 4.
+SELECT firstname, 
+    lastname, 
+    SUBSTR(lastname,3,1) AS '3rd letter of last name' 
+FROM customer 
+    WHERE firstname LIKE LOWER('%t%') OR LOWER(lastname) LIKE '%t%'
 
--- 5. Who are all the customers with hotmail addresses?
-SELECT * FROM Customer WHERE Email LIKE '%@hotmail.com'
+-- 5.
+SELECT REPLACE(name, 'ö',':)') 
+FROM artist 
+    WHERE name LIKE '%ö%'
 
--- 6. Who are all the customers who don't have a company listed?
-SELECT * FROM Customer WHERE Company Is NULL
+-- 6.
+SELECT customerid, 
+    COALESCE(state, '') AS 'State', 
+    COALESCE(fax, '') AS 'Fax' 
+FROM customer
 
--- 7. What are the genres whose name is in the second half of the alphabet?
-SELECT * FROM Genre WHERE Name >= 'N' ORDER BY NAME ASC
+-- 7.
+SELECT LOWER(SUBSTR(title,1,20)) AS 'Title' 
+FROM album 
+    WHERE LENGTH(title) > 20
 
--- 8. List the cities with employees, reverse alphabetically.
-SELECT City FROM Employee ORDER BY CITY DESC
+-- 8. 
+SELECT * 
+FROM invoice 
+    WHERE billingcity IN ('Berlin', 'Toronto') AND total > 5 
+    ORDER BY invoicedate DESC

@@ -1,124 +1,76 @@
 -- 1.
-SELECT
-	title,
-	first_name,
-	last_name
-FROM
-	authors a2
-JOIN authorship a ON
-	a2.author_id = a.author_id
-JOIN books b ON
-	a.book_id = b.book_id
+INSERT INTO demo (
+        id,
+        `characters`,
+        dates,
+        decimalNumbers,
+        whole_numbers,
+        date_and_time
+    )
+VALUES (1, ' kyle', '2020-10-14', 1.1, 3, NOW()) 
 
 -- 2.
-SELECT
-	first_name,
-	last_name,
-	CONCAT(SUBSTRING(first_name, 1, 1), ".", SUBSTRING(last_name, 1, 1)) AS 'Initials',
-	title
-FROM
-	books b
-JOIN withdrawals w ON
-	b.book_id = w.book_id
-JOIN members m ON
-	w.member_id = m.member_id
-WHERE
-	first_name LIKE 'B%'
-	AND last_name LIKE 'W%'
+INSERT INTO demo
+VALUES (3, ' kyle', '2020-10-14', 1.1, 3, NOW()) 
 
---3. 
-SELECT
-	first_name,
-	last_name,
-	COUNT(*) AS 'Books Authored'
-FROM
-	authors a
-JOIN authorship a2 ON
-	a.author_id = a2.author_id
-JOIN books b ON
-	a2.book_id = b.book_id
-WHERE
-	country IN ('USA',
-	'U.S.')
-GROUP BY
-	a.author_id
+-- 3.
+INSERT INTO demo (
+        `characters`,
+        whole_numbers,
+        date_and_time
+    )
+VALUES ('jacob', 22, NOW()) 
 
---4.
-SELECT
-	first_name,
-	last_name,
-	w.withdrawal_date,
-	b.title
-FROM
-	members m
-JOIN withdrawals w ON
-	m.member_id = w.member_id
-JOIN books b ON
-	w.book_id = b.book_id
-WHERE
-	MONTH(w.withdrawal_date) = 10
-
+-- 4.
+INSERT INTO demo
+VALUES (
+        3 + 1,
+        ' kyle',
+        '2020-10-14',
+        1.1 * 1,
+        3 / 3,
+        NOW()
+    ) 
+    
 -- 5.
-SELECT
-	first_name,
-	last_name,
-	w.withdrawal_id,
-	w.withdrawal_date,
-	w.return_date
-FROM
-	members m
-JOIN withdrawals w ON
-	m.member_id = w.member_id
-WHERE
-	w.return_date > w.withdrawal_date
+INSERT INTO demo
+VALUES (NULL, ' kyle', NOW(), 1.1 * 1, 3 / 3, NOW()) 
 
 -- 6.
-SELECT
-	first_name,
-	last_name,
-	a2.book_id 
-FROM
-	authors a
-LEFT JOIN authorship a2 ON
-	a.author_id = a2.author_id
+INSERT INTO demo
+VALUES (
+        NULL,
+        ' kyle',
+        NOW(),
+        1.1 * 1,
+        DATEDIFF('2020-02-14', NOW()),
+        NOW()
+    ) 
 
--- 7. 
-SELECT
-	first_name,
-	last_name
-FROM
-	members m
-LEFT JOIN withdrawals w ON
-	m.member_id = w.member_id
-WHERE
-	w.member_id IS NULL
+--7.
+INSERT INTO demo
+VALUES (
+        NULL,
+        ' kyle',
+        DATE_SUB(NOW(), INTERVAL 20 MONTH),
+        1.1 * 1,
+        DATEDIFF('2020-02-14', NOW()),
+        DATE_ADD(NOW(), INTERVAL 500 HOUR)
+    ) 
 
 -- 8.
-SELECT
-	m.first_name,
-	m.last_name
-FROM
-	withdrawals w
-RIGHT JOIN members m ON
-	w.member_id = m.member_id
-WHERE
-	w.member_id IS NULL
+SELECT MONTHNAME(dates),
+    MONTHNAME(date_and_time)
+FROM demo d 
 
 -- 9.
-SELECT
-	*
-FROM
-	books,
-	authors
+SELECT CAST(decimalNumbers AS DECIMAL(5, 0))
+FROM demo d 
 
 -- 10.
-SELECT
-	DISTINCT m.first_name,
-	m.last_name
-FROM
-	members m
-JOIN members m2 ON
-	m.first_name = m2.first_name
-	AND m.member_id <> m2.member_id
-ORDER BY
-	m.first_name
+SELECT *
+FROM demo d
+WHERE EXTRACT(
+        MONTH
+        FROM date_and_time
+    ) = 10
