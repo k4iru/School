@@ -1,0 +1,23 @@
+table {
+    border: 1px solid;
+}
+
+td {
+    text-align: center;
+    padding: 3px;
+}
+
+th {
+    background: #313140;
+    color: white;
+}
+
+tr {
+    background: white;
+    color: black;
+}
+
+.selected {
+    background: red;
+    color: white;
+}
