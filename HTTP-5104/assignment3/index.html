@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Portfolio</title>
-        <meta name="description" content="Kyle Cheung's personal portfoolio site">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="styles/main.css">
-        <script src="scripts/script.js"></script>
-        <meta name="theme-color" content="#e63946">
-    </head>
-    <body>
-        <header class="page-container">
-            <nav>
-                <a href="#"><img class="logo" src="assets/images/logo.png"></a>
-                <ul id="main-nav">
-                    <li><a class="nav-item" href="#">About</a></li>
-                    <li><a class="nav-item" href="#">Work</a></li>
-                    <li><a class="nav-item" href="#">Hire Me</a></li>
-                </ul>
-                <span class="spacer"></span>
-            </nav>
-        </header>
-        <main class="page-container flex-container">
-            <section id="sec-1">
-                <div class="banner">
-                    <h1 class="name-text">Kyle Cheung</h1>
-                    <p id="blurb">&lt;Fullstack Developer /&gt;</p>
-                </div>
-            </section>
-            <section id="sec-2">
-                <h2>About</h2>
-                <div class="triangle"></div>
-            </section>
-        </main>
 
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <meta name="description" content="Kyle Cheung's personal portfoolio site">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/script.js"></script>
+    <meta name="theme-color" content="#e63946">
+</head>
+
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="#"><img class="logo" src="assets/images/logo.png"></a>
+            <ul id="main-nav">
+                <li><a class="nav-item" href="#">About</a></li>
+                <li><a class="nav-item" href="#">Work</a></li>
+                <li><a class="nav-item" href="#">Hire Me</a></li>
+            </ul>
+            <span class="spacer"></span>
+        </nav>
+    </header>
+    <main class="flex-container">
+        <section id="sec-1">
+            <div class="banner">
+                <h1 class="name-text">Kyle Cheung</h1>
+                <p id="blurb">&lt;Fullstack Developer /&gt;</p>
+            </div>
+        </section>
+        <section id="sec-2">
+            <h2>About</h2>
+            <span id="triangle-1"></span>
+            <div class="bio-container page-container">
+                <img class="profile-img" src="assets/images/profile.jpg">
+                <p>Toronto based Full-stack Developer with a diverse skill set. I specialize in building modern web apps
+                    using a JavaScript programming stack. My interests include fitness and music. In my free time you
+                    will often find me at the gym or finding the newest band to check out on the weekend.</p>
+            </div>
+        </section>
+        <section id="sec-3">
+            <h2>Work</h2>
+            <div class="project"></div>
+            <span id="triangle-2"></span>
+        </section>
+        <section id="sec-4">
+            <h2>Hire Me</h2>
+            <div class="project"></div>
+
+        </section>
+    </main>
+
+</body>
+
 </html>
