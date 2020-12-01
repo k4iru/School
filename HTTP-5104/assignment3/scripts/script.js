@@ -16,3 +16,8 @@ window.onload = function() {
         });
     }
 }
+
+// prevent form submission
+function submitHandler() {
+    return false;
+}

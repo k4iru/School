@@ -1,6 +1,7 @@
 *::before, *::after, * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -83,13 +84,12 @@ header {
 .flex-container {
     display: flex;
     flex-flow: column;
-    height: 100vh;
 }
 
 #sec-1 {
     min-height: 90vh;
     display: flex;
-    flex: 1 1 100vh;
+    flex: 1 1 90vh;
     background-color: #e63946;
     z-index: 1;
 }
@@ -134,7 +134,6 @@ header {
     box-shadow: 0px -3px 7px 0px rgba(0, 0, 0, 0.26);
 }
 
-
 .bio-container {
     display: flex;
     flex-direction: row-reverse;
@@ -146,6 +145,12 @@ header {
     width: 250px;
     clip-path: circle(120px at center);
 }
+
+.work-img {
+    box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.26);
+    margin: 1em;
+}
+
 #triangle-1 {
     box-shadow: 0px -3px 7px 0px rgba(0, 0, 0, 0.26);
     position: absolute;
@@ -176,14 +181,26 @@ header {
     background-color: #f5f5f5;
 }
 
-.project {
-    display: block;
-    width: 250px;
-    height: 200px;
+.work-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
 }
 
 #sec-4 {
-    background-color:#1d3557;
+    background-color: #1d3557;
     z-index: -5;
 }
 
+form {
+    margin: auto;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #e63946;
+}

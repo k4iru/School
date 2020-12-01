@@ -5,6 +5,7 @@
     https://unsplash.com/@giorgiotrovato
     https://unsplash.com/@kalebtapp
 -->
+
 <head>
     <meta charset="utf-8">
     <title>Portfolio</title>
@@ -41,7 +42,7 @@
             <h2>About</h2>
             <span id="triangle-1"></span>
             <div class="bio-container page-container">
-                <img class="profile-img" src="assets/images/profile.jpg">
+                <img class="profile-img" src="assets/images/profile.jpg" alt="a picture of me, Kyle Cheung">
                 <p>Toronto based Full-stack Developer with a diverse skill set. I specialize in building modern web apps
                     using a JavaScript programming stack. My interests include fitness and music. In my free time you
                     will often find me at the gym or finding the newest band to check out on the weekend.</p>
@@ -49,15 +50,32 @@
         </section>
         <section id="sec-3">
             <h2>Work</h2>
-            <div class="project"></div>
+            <div class="work-container">
+                <a href="#"><img class="work-img" src="assets/images/work-1.jpg" alt=""></a>
+                <img class="work-img" src="assets/images/work-2.jpg">
+                <img class="work-img" src="assets/images/work-3.jpg">
+            </div>
             <span id="triangle-2"></span>
         </section>
         <section id="sec-4">
             <h2>Hire Me</h2>
-            <div class="project"></div>
+            <form method="POST" onsubmit="return submitHandler()">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="form-name">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="form-email">
+                <label for="message">Message</label>
+                <textarea name="message"></textarea>
+
+                <input type="submit" value="Send">
+            </form>
+
 
         </section>
     </main>
+    <footer>
+        <p>Copyright &copy; 2020 Kyle Cheung</p>
+    </footer>
 
 </body>
 
