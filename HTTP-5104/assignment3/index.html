@@ -1,84 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-    image sources
-    https://unsplash.com/@giorgiotrovato
-    https://unsplash.com/@kalebtapp
--->
+    <!--
+            image sources
+            https://unsplash.com/@giorgiotrovato
+            https://unsplash.com/@kalebtapp
+        -->
 
-<head>
-    <meta charset="utf-8">
-    <title>Portfolio</title>
-    <meta name="description" content="Kyle Cheung's personal portfoolio site">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/script.js" defer></script>
-    <meta name="theme-color" content="#e63946">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <title>Portfolio</title>
+        <meta name="description" content="Kyle Cheung's personal portfoolio site">
+        <meta name="viewport" content="width=device-width">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto:wght@300;400;700;900&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/script.js" defer></script>
+        <meta name="theme-color" content="#e63946">
+    </head>
 
-<body>
-    <header>
-        <nav class="nav-container">
-            <a href="#"><img class="logo" src="assets/images/logo.png"></a>
-            <ul id="main-nav">
-                <li><a class="nav-item" href="#">About</a></li>
-                <li><a class="nav-item" href="#">Work</a></li>
-                <li><a class="nav-item" href="#">Hire Me</a></li>
-            </ul>
-            <span class="spacer"></span>
-        </nav>
-    </header>
-    <main class="flex-container">
-        <section id="sec-1">
-            <div class="banner">
-                <h1 class="name-text">Kyle Cheung</h1>
-                <p id="blurb">&lt;Fullstack Developer /&gt;</p>
-            </div>
-        </section>
-        <section id="sec-2">
-            <h2>About</h2>
-            <span id="triangle-1"></span>
-            <div class="bio-container">
-                <img class="profile-img" src="assets/images/profile.jpg" alt="a picture of me, Kyle Cheung">
-                
-                <p id="profile-text">Toronto based Full-stack Developer with a diverse skill set. I specialize in building modern web apps
-                    using a JavaScript programming stack. My interests include fitness and music. In my free time you
-                    will often find me at the gym or finding the newest band to check out on the weekend.</p>
-            </div>
-        </section>
-        <section id="sec-3">
-            <h2>Work</h2>
-            <div id="work-container">
-                <a href="#"><img class="work-img" src="assets/images/work-1.jpg" alt=""></a>
-                <img class="work-img" src="assets/images/work-2.jpg">
-                <img class="work-img" src="assets/images/work-3.jpg">
-            </div>
-            <span id="triangle-2"></span>
-        </section>
-        <section id="sec-4">
-            <h2>Hire Me</h2>
-            <div class="page-container">
-                <form method="POST" onsubmit="return submitHandler()">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="form-name">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="form-email">
-                    <label for="message">Message</label>
-                    <textarea name="message"></textarea>
+    <body>
+        <header>
 
-                    <input type="submit" value="Send Message">
-                </form>
-            </div>
+            <nav class="-container">
+                <h2 class="sr-only">Navigation</h2>
+                <a href="#"><img class="logo" src="assets/images/logo.png" alt="Kyle Cheung brand logo"></a>
+                <ul id="main-nav">
+                    <li><a class="nav-item" href="#">About</a></li>
+                    <li><a class="nav-item" href="#">Work</a></li>
+                    <li><a class="nav-item" href="#">Hire Me</a></li>
+                </ul>
+                <a href="#" class="box-shadow-menu"></a>
+                <span class="spacer"></span>
+            </nav>
+        </header>
 
-        </section>
-    </main>
-    <footer>
-        <p>Copyright &copy; 2020 Kyle Cheung</p>
-    </footer>
+        <main class="flex-container">
+            <section id="sec-1">
+                <div class="banner">
+                    <h1 class="name-text">Kyle Cheung</h1>
+                    <p id="blurb">&lt;Fullstack Developer /&gt;</p>
+                </div>
+            </section>
 
-</body>
+            <section id="sec-2">
+                <h2>About</h2>
+                <span id="triangle-1"></span>
+                <div class="bio-container">
+                    <img class="profile-img" src="assets/images/profile.jpg" alt="Asian male in a suit">
+                    <p id="profile-text">Toronto based Full-stack Developer with a diverse skill set. I specialize in
+                        building modern web apps
+                        using a JavaScript programming stack. My interests include fitness and music. In my free time you
+                        will often find me at the gym or finding the newest band to check out on the weekend.</p>
+                </div>
+            </section>
+
+            <section id="sec-3">
+                <h2>Work</h2>
+                <div id="work-container">
+                    <a href="#"><img class="work-img" src="assets/images/work-1.jpg"
+                            alt="Spotr: custom playlist generator based on Spotify API"></a>
+                    <a href="#"><img class="work-img" src="assets/images/work-2.jpg"
+                            alt="RayOuts: Design for an eyewear brand"></a>
+                    <a href="#"><img class="work-img" src="assets/images/work-3.jpg"
+                            alt="Thirsty: Phone app for locating nearby vending machines"></a>
+                </div>
+                <span id="triangle-2"></span>
+            </section>
+
+            <section id="sec-4">
+                <h2>Hire Me</h2>
+                <div class="page-container">
+
+                    <form method="POST" onsubmit="return submitHandler()">
+                        <label for="form-name">Name</label>
+                        <input type="text" name="name" id="form-name">
+                        <label for="form-email">Email</label>
+                        <input type="text" name="email" id="form-email">
+                        <label for="form-message">Message</label>
+                        <textarea name="message" id="form-message"></textarea>
+                        <input type="submit" value="Send Message">
+                    </form>
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; 2020 Kyle Cheung</p>
+        </footer>
+
+    </body>
 
 </html>
