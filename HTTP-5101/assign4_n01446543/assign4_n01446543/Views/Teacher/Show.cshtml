@@ -1,0 +1,11 @@
+﻿@model assign4_n01446543.Models.Teacher
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>@Model.teacherFname @Model.teacherLname</h2>
+<div id="containerShow">
+    <p>Employee Number: @Model.employeeNumber</p>
+    <p>Salary: $@Model.salary</p>
+    <p>Hire Date: @Model.hireDate.ToShortDateString()</p>
+</div>

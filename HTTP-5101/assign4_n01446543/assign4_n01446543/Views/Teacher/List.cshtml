@@ -1,0 +1,28 @@
+﻿@model IEnumerable<assign4_n01446543.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+    <h2>List of Teachers</h2>
+    <div class="row">
+        <div class="col-sm-3">
+            <h3>Teacher Name</h3>
+        </div>
+        <div class="col-sm-3">
+            <h3>Hire Date</h3>
+        </div>
+        <div class="col-sm-3">
+            <h3>Salary</h3>
+        </div>
+    </div>
+    @foreach (var teacher in Model)
+    {
+        <div class="row">
+            <div class="col-sm-3"><p>@teacher.teacherFname @teacher.teacherLname</p></div>
+            <div class="col-sm-3"><p>@teacher.hireDate.ToShortDateString()</p></div>
+            <div class="col-sm-3"><p>@teacher.salary</p></div>
+        </div>
+    }
+
+</div>
