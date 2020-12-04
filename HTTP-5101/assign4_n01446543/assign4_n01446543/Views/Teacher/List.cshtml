@@ -19,7 +19,7 @@
     @foreach (var teacher in Model)
     {
         <div class="row">
-            <div class="col-sm-3"><p>@teacher.teacherFname @teacher.teacherLname</p></div>
+            <a href="/Teacher/GetShow/@teacher.teacherId"><div class="col-sm-3"><p>@teacher.teacherFname @teacher.teacherLname</p></div></a>
             <div class="col-sm-3"><p>@teacher.hireDate.ToShortDateString()</p></div>
             <div class="col-sm-3"><p>@teacher.salary</p></div>
         </div>

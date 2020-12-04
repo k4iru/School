@@ -48,5 +48,57 @@ namespace assign4_n01446543.Controllers
             Teacher teacher = controller.FindTeacher(teacherId);
             return View(teacher);
         }
+
+        [HttpGet]
+        [Route("Teacher/GetShow/{id}")]
+        public ActionResult GetShow(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher teacher = controller.FindTeacher(id);
+            return View(teacher);
+        }
+
+        public ActionResult DeleteConfirm(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher teacher = controller.FindTeacher(id);
+
+
+            return View(teacher);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            controller.DeleteTeacher(id);
+            return RedirectToAction("List");
+        }
+        
+
+        public ActionResult Add_Ajax()
+        {
+            return View();
+        }
+
+        public ActionResult Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("Teacher/Create/{fname}/{lname}/{salary}")]
+        public ActionResult Create(string fname, string lname, DateTime date, decimal salary)
+        {
+            TeacherDataController controller = new TeacherDataController();
+            Teacher teacher = new Teacher();
+            teacher.teacherFname = fname;
+            teacher.teacherLname = lname;
+            teacher.hireDate = Convert.ToDateTime(date);
+            teacher.salary = Convert.ToDecimal(salary);
+
+            controller.AddTeacher(teacher);
+            return RedirectToAction("List");
+        }
+
     }
 }

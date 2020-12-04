@@ -12,6 +12,7 @@ namespace assign4_n01446543
             // Web API configuration and services
 
             // Web API routes
+            config.EnableCors();
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

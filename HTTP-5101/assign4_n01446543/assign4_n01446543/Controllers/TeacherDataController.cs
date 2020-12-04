@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Web.Http;
 using assign4_n01446543.Models;
 using MySql.Data.MySqlClient;
+using System.Web.Http.Cors;
+using System.Diagnostics;
 
 namespace assign4_n01446543.Controllers
 {
@@ -74,7 +76,7 @@ namespace assign4_n01446543.Controllers
                 switch (ex.Number)
                 {
                     case 0:
-                        Console.WriteLine("Cannot connect to server :(.");
+                        Console.WriteLine("Cannot connect to server.");
                         break;
                     case 1045:
                         Console.WriteLine("invalid username/password");
@@ -96,7 +98,9 @@ namespace assign4_n01446543.Controllers
 
                 // create the sql command
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "SELECT * FROM teachers t JOIN classes c ON t.teacherid = c.teacherid WHERE t.teacherid =" + id;
+                cmd.CommandText = "SELECT * FROM teachers WHERE teacherid = @id";
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Prepare();
 
                 // execute the sql command and store results in ResultSet
                 MySqlDataReader ResultSet = cmd.ExecuteReader();
@@ -110,8 +114,7 @@ namespace assign4_n01446543.Controllers
                 string teacherLname = ResultSet["teacherlname"].ToString();
                 string employeeNumber = ResultSet["employeenumber"].ToString();
                 DateTime hireDate = ResultSet.GetDateTime("hiredate");
-                decimal salary = ResultSet.GetDecimal("salary");
-                string course = ResultSet["classname"].ToString();
+                decimal salary = ResultSet.GetDecimal("salary");   
 
                 // set values on the teacher object
                 newTeacher.teacherId = teacherId;
@@ -120,8 +123,8 @@ namespace assign4_n01446543.Controllers
                 newTeacher.employeeNumber = employeeNumber;
                 newTeacher.hireDate = hireDate;
                 newTeacher.salary = salary;
+
  
-                //TODO newTeacher.courses.Add(course);
 
                 // close connection when finished
                 conn.Close();
@@ -141,6 +144,158 @@ namespace assign4_n01446543.Controllers
                 }
             }
             return newTeacher;
+        }
+
+        [HttpPost]
+        [EnableCors(origins: "*", methods: "*", headers: "*")]
+        public void AddTeacher(Teacher teacher)
+        {
+         
+            try
+            {
+                // connect to the school database
+                MySqlConnection conn = school.AccessDatabase();
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "INSERT INTO teachers " +
+                "(teacherfname, teacherlname, employeenumber, hiredate, salary) " +
+                "VALUES (@fname, @lname, @employeenumber, @hiredate, @salary)";
+
+                cmd.Parameters.AddWithValue("@fname", teacher.teacherFname);
+                cmd.Parameters.AddWithValue("@lname", teacher.teacherLname);
+                cmd.Parameters.AddWithValue("@employeenumber", GetMaxEmployeeNumber());
+                cmd.Parameters.AddWithValue("@hiredate", teacher.hireDate);
+                cmd.Parameters.AddWithValue("@salary", teacher.salary);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server :(.");
+                        break;
+                    case 1045:
+                        Console.WriteLine("invalid username/password");
+                        break;
+                }
+            }
+        }
+
+        public void DeleteTeacher(int id)
+        {
+            try
+            {
+                // connect to the school database
+                MySqlConnection conn = school.AccessDatabase();
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM teachers WHERE teacherid=@id";
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                // delete orphaned courses
+                DeleteTeacherCourses(id);
+
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server :(.");
+                        break;
+                    case 1045:
+                        Console.WriteLine("invalid username/password");
+                        break;
+                }
+            }
+        }
+        public void DeleteTeacherCourses(int id)
+        {
+            try
+            {
+                // connect to the school database
+                MySqlConnection conn = school.AccessDatabase();
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "DELETE FROM classes WHERE teacherid=@id";
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server :(.");
+                        break;
+                    case 1045:
+                        Console.WriteLine("invalid username/password");
+                        break;
+                }
+            }
+        }
+
+        public string GetMaxEmployeeNumber()
+        {
+            string employeeNumber = "";
+            try
+            {
+                // connect to the school database
+                MySqlConnection conn = school.AccessDatabase();
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * FROM teachers ORDER BY teacherid DESC LIMIT 1";
+                cmd.Prepare();
+
+                // execute the sql command and store results in ResultSet
+                MySqlDataReader ResultSet = cmd.ExecuteReader();
+
+                // read the row
+                ResultSet.Read();
+                string eNumber = ResultSet["employeenumber"].ToString();
+                Debug.WriteLine("Enumber:" + eNumber);
+                int number = Int32.Parse(eNumber.TrimStart('T')) + 1;
+                Debug.WriteLine("trimmed:" + number);
+                employeeNumber = $"T{number}";
+                Debug.WriteLine("combined:" + employeeNumber);
+
+
+
+                conn.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server :(.");
+                        break;
+                    case 1045:
+                        Console.WriteLine("invalid username/password");
+                        break;
+                }
+            }
+            return employeeNumber;
         }
 
     }
