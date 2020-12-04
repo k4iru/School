@@ -49,6 +49,11 @@ namespace assign4_n01446543.Controllers
             return View(teacher);
         }
 
+        /// <summary>
+        /// Get route to display specific teacher 
+        /// </summary>
+        /// <param name="id">teacherid</param>
+        /// <returns>GetShow.chtml</returns>
         [HttpGet]
         [Route("Teacher/GetShow/{id}")]
         public ActionResult GetShow(int id)
@@ -58,6 +63,13 @@ namespace assign4_n01446543.Controllers
             return View(teacher);
         }
 
+        /// <summary>
+        /// Confirmation page to delete a teacher
+        /// </summary>
+        /// <param name="id">takes id of a teacher</param>
+        /// <returns>returns to list of teachers</returns>
+        [HttpGet]
+        [Route("Teacher/DeleteConfirm/{id}")]
         public ActionResult DeleteConfirm(int id)
         {
             TeacherDataController controller = new TeacherDataController();
@@ -67,24 +79,51 @@ namespace assign4_n01446543.Controllers
             return View(teacher);
         }
 
+        /// <summary>
+        /// Deletes specified teacher
+        /// </summary>
+        /// <param name="id">takes teachers id as an input</param>
+        /// <returns>returns the list of teachers</returns>
+
+        [HttpPost]
+        [Route("Teacher/Delete/{id}")]
         public ActionResult Delete(int id)
         {
             TeacherDataController controller = new TeacherDataController();
             controller.DeleteTeacher(id);
             return RedirectToAction("List");
         }
-        
 
+        /// <summary>
+        /// Ajax view for adding a teacher
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Teacher/Add_Ajax")]
         public ActionResult Add_Ajax()
         {
             return View();
         }
 
+        /// <summary>
+        /// View for adding a teacher
+        /// </summary>
+        /// <returns>A list of teachers</returns>
+        [HttpGet]
+        [Route("Teacher/Add")]
         public ActionResult Add()
         {
             return View();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fname"></param>
+        /// <param name="lname"></param>
+        /// <param name="date"></param>
+        /// <param name="salary"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Teacher/Create/{fname}/{lname}/{salary}")]
         public ActionResult Create(string fname, string lname, DateTime date, decimal salary)

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using assign4_n01446543.Models;
 using MySql.Data.MySqlClient;
@@ -146,6 +143,10 @@ namespace assign4_n01446543.Controllers
             return newTeacher;
         }
 
+        /// <summary>
+        /// Method to Add a teacher to the school Database
+        /// </summary>
+        /// <param name="teacher">Teacher object</param>
         [HttpPost]
         [EnableCors(origins: "*", methods: "*", headers: "*")]
         public void AddTeacher([FromBody]Teacher teacher)
@@ -162,6 +163,7 @@ namespace assign4_n01446543.Controllers
                 "(teacherfname, teacherlname, employeenumber, hiredate, salary) " +
                 "VALUES (@fname, @lname, @employeenumber, @hiredate, @salary)";
 
+                // parameterized queries
                 cmd.Parameters.AddWithValue("@fname", teacher.teacherFname);
                 cmd.Parameters.AddWithValue("@lname", teacher.teacherLname);
                 cmd.Parameters.AddWithValue("@employeenumber", GetMaxEmployeeNumber());
@@ -187,6 +189,10 @@ namespace assign4_n01446543.Controllers
             }
         }
 
+        /// <summary>
+        /// deletes a teacher from the school databases based on teacherid.
+        /// </summary>
+        /// <param name="id">teacherid</param>
         public void DeleteTeacher(int id)
         {
             try
@@ -221,6 +227,11 @@ namespace assign4_n01446543.Controllers
                 }
             }
         }
+
+        /// <summary>
+        /// Searches courses that share an id of a deleted teacher and removes them
+        /// </summary>
+        /// <param name="id">teacherid</param>
         public void DeleteTeacherCourses(int id)
         {
             try
@@ -253,6 +264,11 @@ namespace assign4_n01446543.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Gets the next available employee number
+        /// </summary>
+        /// <returns>A string with of the next available employee number</returns>
         public string GetMaxEmployeeNumber()
         {
             string employeeNumber = "";
@@ -271,15 +287,12 @@ namespace assign4_n01446543.Controllers
 
                 // read the row
                 ResultSet.Read();
+                
+                // get the employee number of the last employee and add 1
                 string eNumber = ResultSet["employeenumber"].ToString();
-                Debug.WriteLine("Enumber:" + eNumber);
                 int number = Int32.Parse(eNumber.TrimStart('T')) + 1;
-                Debug.WriteLine("trimmed:" + number);
                 employeeNumber = $"T{number}";
-                Debug.WriteLine("combined:" + employeeNumber);
-
-
-
+   
                 conn.Close();
 
             }
