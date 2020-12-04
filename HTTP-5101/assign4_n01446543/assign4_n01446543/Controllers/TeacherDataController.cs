@@ -148,7 +148,7 @@ namespace assign4_n01446543.Controllers
 
         [HttpPost]
         [EnableCors(origins: "*", methods: "*", headers: "*")]
-        public void AddTeacher(Teacher teacher)
+        public void AddTeacher([FromBody]Teacher teacher)
         {
          
             try

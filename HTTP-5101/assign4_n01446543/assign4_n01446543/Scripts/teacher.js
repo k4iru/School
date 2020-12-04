@@ -7,18 +7,15 @@
 	let lname = document.getElementById('lname').value;
 	let salary = document.getElementById('salary').value;
 
-
-
-
 	let teacherData = {
 		"teacherFname": fname,
 		"teacherLname": lname,
-		"employeeNumber": 'T555',
 		"salary": salary
 	};
 
 	console.log('made object');
 
+	// async
 	rq.open("POST", URL, true);
 	rq.setRequestHeader("Content-Type", "application/json");
 	rq.onreadystatechange = function () {

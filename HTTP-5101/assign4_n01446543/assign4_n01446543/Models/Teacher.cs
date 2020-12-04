@@ -17,5 +17,8 @@ namespace assign4_n01446543.Models
         public DateTime hireDate;
         public decimal salary;
         public List<Course> courses = new List<Course>();
+
+        public Teacher() { }
     }
+
 }
