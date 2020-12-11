@@ -1,16 +1,16 @@
-console.log('test');
+
 
 class Character {
     // might speed, sanity, knowledge are 2 arrays, first element contains position of default stat, second element is array of stat range
     constructor(name, might, speed, sanity, knowledge) {
         this.name = name;
-        this.might = might[1][might[0]];
+        this.mightIndex = might[0];
         this.mightArr = might[1];
-        this.speed = speed[1][speed[0]];
+        this.speedIndex = speed[0];
         this.speedArr = speed[1];
-        this.sanity = sanity[1][sanity[0]];
+        this.sanityIndex = sanity[0];
         this.sanityArr = sanity[1];
-        this.knowledge = knowledge[1][knowledge[0]];
+        this.knowledgeIndex = knowledge[0];
         this.knowledgeArr = knowledge[1];
     }
 }
@@ -20,21 +20,25 @@ const darrin = new Character(
     [3, [-1, 2, 3, 3, 4, 5, 6, 6, 7]],
     [5, [-1, 4, 4, 4, 5, 6, 7, 7, 8]],
     [3, [-1, 1, 2, 3, 4, 5, 5, 5, 7]],
-    [3, [-1, 2, 3, 3, 4, 5, 5, 5, 7]]);
+    [3, [-1, 2, 3, 3, 4, 5, 5, 5, 7]]
+);
 
-flash = document.getElementById('flash');
+const heather = new Character(
+    'Heather Granville',
+    [3, [-1, 3, 3, 3, 4, 5, 6, 7, 8]],
+    [3, [-1, 3, 3, 4, 5, 6, 6, 7, 8]],
+    [3, [-1, 3, 3, 3, 4, 5, 6, 6, 6]],
+    [5, [-1, 2, 3, 3, 4, 5, 6, 7, 8]]
+);
 
-flash.onclick = function () {
-    let val = parseInt(this.value);
-    switch (val) {
-        case 1:
-            showCharacter(darrin);
-            break;
-        case 2:
-            break;
-        default:
-    }
-}
+console.log(heather.name);
+
+c1 = document.getElementById('flash');
+c2 = document.getElementById('heather');
+
+
+c1.onclick = function() {showCharacter(darrin);};
+c2.onclick = function() {showCharacter(heather);};
 
 
 function showCharacter(c) {
@@ -46,18 +50,25 @@ function showCharacter(c) {
     }
 
     let character = new DocumentFragment();
-    let might = paginate(c.might, c.mightArr);
+    let might = paginate(c.mightIndex, c.mightArr);
+    let speed = paginate(c.speedIndex, c.speedArr);
+    let sanity = paginate(c.sanityIndex, c.sanityArr);
+    let knowledge = paginate(c.knowledgeIndex, c.knowledgeArr);
     character.appendChild(might);
+    character.appendChild(speed);
+    character.appendChild(sanity);
+    character.appendChild(knowledge);
     show.appendChild(character);
 
 }
 
-function paginate(mIndex, mightArr) {
+function paginate(index, arr) {
     let ul = document.createElement('ul');
-    for (let i = 0; i < mightArr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         let li = document.createElement('li');
-        li.appendChild(document.createTextNode(mightArr[i]));
-        if (i === mIndex) {
+        li.appendChild(document.createTextNode(arr[i]));
+        li.dataset.index = i;
+        if (i === index) {
             li.classList.add('current');
         }
         ul.appendChild(li);
