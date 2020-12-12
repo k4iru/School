@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style/style.css">
-        <script src="scripts/script.js" defer></script>
-    </head>
-    <body>
-        <h1>Betrayal House on the Hill</h1>
-        <button id="flash" value="1">Flash</button>
-        <button id="heather" value="2">Heather</button>
-        <div id="showChar">
 
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/420869220c.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Betrayal at House on the Hill</h1>
+        <h2>Stat Tracker</h2>
+        <div>
+            <button id="reset" class="switch">Reset</button>
         </div>
-    </body>
+    </header>
+    <div class="page-container">
+        <div id="left">
+            <button id="flash" class="switch">Darrin "Flash" Williams</button>
+            <div id="showChar1"></div>
+            <button id="heather" class="switch">Heather Granville</button>
+            <div id="showChar2"></div>
+            <button id="father" class="switch">Father Rhinehardt</button>
+            <div id="showChar3"></div>
+        </div>
+        <div id="right">
+            <button id="madame" class="switch">Madame Zostra</button>
+            <div id="showChar4"></div>
+            <button id="missy" class="switch">Missy Dubourde</button>
+            <div id="showChar5"></div>
+            <button id="brandon" class="switch">Brandon Jaspers</button>
+            <div id="showChar6"></div>
+        </div>
+    </div>
+</body>
+
 </html>

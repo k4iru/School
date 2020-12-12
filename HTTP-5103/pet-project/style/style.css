@@ -1,7 +1,21 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+}
 html {
+    font-family: 'Noto Sans JP', sans-serif;
     background-color: #edf2f4;
+    text-align: center;
 }
 
+button {
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+header {
+    padding: 1em;
+}
 li {
     display: inline-block;
     width: 30px;
@@ -9,6 +23,27 @@ li {
     text-align: center;
 }
 
+ul {
+    padding: 3px 0px;
+}
 .current {
-    background-color: green;
+    border-left: 4px solid green;
+    border-right: 4px solid green;
+}
+
+.dead {
+    border-left: 4px solid red;
+    border-right: 4px solid red;
+}
+
+.page-container {
+    max-width: 1200px;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.switch {
+    margin-top: 1em;
 }
