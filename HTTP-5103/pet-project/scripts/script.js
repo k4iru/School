@@ -71,10 +71,10 @@ function showCharacter(c, show) {
     let character = new DocumentFragment();
 
     // pass specific increase and decrease
-    let might = getStat(c, c.mightIndex, c.mightArr, mdecrease, mincrease);
-    let speed = getStat(c, c.speedIndex, c.speedArr, sdecrease, sincrease);
-    let sanity = getStat(c, c.sanityIndex, c.sanityArr, sadecrease, saincrease);
-    let knowledge = getStat(c, c.knowledgeIndex, c.knowledgeArr, kdecrease, kincrease);
+    let might = getStat('might', c, c.mightIndex, c.mightArr, mdecrease, mincrease);
+    let speed = getStat('speed', c, c.speedIndex, c.speedArr, sdecrease, sincrease);
+    let sanity = getStat('sanity', c, c.sanityIndex, c.sanityArr, sadecrease, saincrease);
+    let knowledge = getStat('knowledge', c, c.knowledgeIndex, c.knowledgeArr, kdecrease, kincrease);
 
     // append to fragment
     character.appendChild(might);
@@ -88,12 +88,16 @@ function showCharacter(c, show) {
 }
 
 // populate stat table
-function getStat(c, index, arr, decrease, increase) {
+function getStat(str, c, index, arr, decrease, increase) {
     // create html elements
     let ul = document.createElement('ul');
     let b1 = document.createElement('button');
     let b2 = document.createElement('button');
+    let span = document.createElement('span');
+    span.className = 'stat';
 
+    span.innerText = str;
+    ul.appendChild(span);
     // buttons for increasing and decreasing stats
     b1.appendChild(document.createTextNode('<'));
     b2.appendChild(document.createTextNode('>'));

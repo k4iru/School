@@ -46,4 +46,11 @@ ul {
 
 .switch {
     margin-top: 1em;
+    text-align: left;
+}
+
+.stat {
+    display: inline-block;
+    text-align: left;
+    width: 100px;
 }
