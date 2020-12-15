@@ -46,6 +46,12 @@ a:focus {
     margin: auto;
 }
 
+.button {
+    background-color: #EF2D56;
+    border-radius: 5px;
+    padding: 4px;
+    box-shadow: 0px 3px 7px 0px rgba(252, 252, 226, 0.44) inset; 
+}
 /* Header */
 
 /* Stretch header background across full width */
@@ -113,4 +119,11 @@ footer {
 
 .col-1 li:not(:first-child) {
     border-left: 1px solid #fff;
+}
+
+#toTop {
+    display: inline-block;
+    padding: 0.1em 3em;
+    margin-bottom: 1em;
+    
 }
