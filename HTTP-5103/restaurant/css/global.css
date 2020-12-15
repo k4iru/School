@@ -1,12 +1,13 @@
+/* Kyle Cheung */
+
 /* General Styles */
 
 /* 
 Colour Palette
 https://coolors.co/d0ffd6-ef2d56-fcf5e2-0f110c-00e8fc
 */
-*,
-*::before,
-*::after {
+
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,12 +21,7 @@ html {
     background-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     color: black;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
@@ -36,9 +32,8 @@ a {
     color: #fff;
 }
 
-a:hover,
-a:focus {
-    color: #950714;
+a:hover, a:focus {
+    color: #00E8FC;
 }
 
 .page-container {
@@ -50,11 +45,13 @@ a:focus {
     background-color: #EF2D56;
     border-radius: 5px;
     padding: 4px;
-    box-shadow: 0px 3px 7px 0px rgba(252, 252, 226, 0.44) inset; 
+    box-shadow: 0px 3px 7px 0px rgba(252, 252, 226, 0.44) inset;
 }
+
 /* Header */
 
 /* Stretch header background across full width */
+
 #header-container {
     width: 100%;
     background-color: black;
@@ -96,7 +93,6 @@ header li {
     color: #950714;
 }
 
-
 /* Footer */
 
 footer {
@@ -125,5 +121,4 @@ footer {
     display: inline-block;
     padding: 0.1em 3em;
     margin-bottom: 1em;
-    
 }

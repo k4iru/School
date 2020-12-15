@@ -1,0 +1,76 @@
+html {
+    background-color: #FCF5E2;
+}
+
+#main h1 {
+    text-align: center;
+    padding: 2em;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+label, input {
+    display: block;
+}
+
+input[type="submit"] {
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    color: #00E8FC;
+}
+
+input, textarea {
+    border: none;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin: 1em 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 250px;
+    height: 100px;
+}
+
+#preview {
+    font-weight: bold;
+    color: #fff;
+    margin: 4em auto;
+    width: 500px;
+    height: 260px;
+    background-color: #0F110C;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px #888888, inset 1px 1px 1px #fff;
+}
+
+#white {
+    color: #fff;
+}
+
+#showName, #showPrice, #showMessage {
+    padding: 0.5em 1em;
+    text-align: right;
+}
+
+#showNumber {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em;
+}
+
+#orderCard {
+    display: inline-block;
+    margin-bottom: 2em;
+}
+
+.orderBtnContainer {
+    text-align: center;
+}
