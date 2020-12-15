@@ -1,8 +1,11 @@
+// Kyle Cheung
+// Get DOM elements
 let btn1 = document.getElementById('btn1');
 let img1 = document.getElementById('img1');
 let btn2 = document.getElementById('btn2');
 let img2 = document.getElementById('img2');
 
+// hover event listener 
 btn1.onmouseenter = function() {
     img1.classList.add("blur");
 }
