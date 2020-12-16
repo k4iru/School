@@ -89,6 +89,10 @@ header li {
     color: #fff;
 }
 
+#logo a:visited {
+    color: #fff;
+}
+
 #logo-accent {
     color: #950714;
 }
