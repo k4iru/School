@@ -166,9 +166,9 @@ function mincrease(c, ul) {
 // speed button handlers
 function sdecrease(c, ul) {
     if (c.speedIndex > 0) {
-        ul.childNodes[c.speedIndex + 1].classList = ''
+        ul.childNodes[c.speedIndex ].classList = ''
         c.speedIndex--;
-        ul.childNodes[c.speedIndex + 1].classList = 'current'
+        ul.childNodes[c.speedIndex ].classList = 'current'
         if (c.speedIndex === 0) {
             ul.childNodes[c.speedIndex + 1].classList = 'dead'
         }
@@ -178,9 +178,9 @@ function sdecrease(c, ul) {
 
 function sincrease(c, ul) {
     if (c.speedIndex < c.speedArr.length - 1) {
-        ul.childNodes[c.speedIndex + 1].classList = ''
+        ul.childNodes[c.speedIndex ].classList = ''
         c.speedIndex++;
-        ul.childNodes[c.speedIndex + 1].classList = 'current'
+        ul.childNodes[c.speedIndex ].classList = 'current'
     }
 }
 

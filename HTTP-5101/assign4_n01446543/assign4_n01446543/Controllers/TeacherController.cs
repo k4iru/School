@@ -138,6 +138,30 @@ namespace assign4_n01446543.Controllers
             controller.AddTeacher(teacher);
             return RedirectToAction("List");
         }
+        [HttpPost]
+        public ActionResult Update(int id, string fname, string lname,  decimal salary)
+        {
+            Teacher teacher = new Teacher();
+            teacher.teacherId = id;
+            teacher.teacherFname = fname;
+            teacher.teacherLname = lname;
 
+            teacher.salary = salary;
+
+            TeacherDataController controller = new TeacherDataController();
+            controller.updateTeacher(teacher);
+
+            return RedirectToAction("GetShow/" + id);
+        }
+
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            TeacherDataController controller = new TeacherDataController();
+
+            Teacher selectedTeacher = controller.FindTeacher(id);
+
+            return View(selectedTeacher);
+        }
     }
 }

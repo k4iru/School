@@ -311,5 +311,48 @@ namespace assign4_n01446543.Controllers
             return employeeNumber;
         }
 
+        /// <summary>
+        /// Receives Teacher information and updates the existing Teacher by its id with new information
+        /// </summary>
+        [HttpPost]
+        public void updateTeacher(Teacher teacher)
+        {
+
+            try
+            {
+                // connect to the school database
+                MySqlConnection conn = school.AccessDatabase();
+                conn.Open();
+
+                MySqlCommand cmd = conn.CreateCommand();
+                string query = "UPDATE teachers SET teacherfname=@fname, teacherlname=@lname, salary=@salary WHERE teacherid=@id";
+
+                cmd.CommandText = query;
+
+                cmd.Parameters.AddWithValue("@id", teacher.teacherId);
+                cmd.Parameters.AddWithValue("@fname", teacher.teacherFname);
+                cmd.Parameters.AddWithValue("@lname", teacher.teacherLname);
+                cmd.Parameters.AddWithValue("@salary", teacher.salary);
+
+                cmd.Prepare();
+                cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server :(.");
+                        break;
+                    case 1045:
+                        Console.WriteLine("invalid username/password");
+                        break;
+                }
+            }
+
+        }
+
     }
 }
