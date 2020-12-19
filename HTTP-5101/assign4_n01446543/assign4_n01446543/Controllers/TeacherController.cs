@@ -138,6 +138,15 @@ namespace assign4_n01446543.Controllers
             controller.AddTeacher(teacher);
             return RedirectToAction("List");
         }
+
+        /// <summary>
+        /// Update teacher information based on teacherid
+        /// </summary>
+        /// <param name="id">Teacher id</param>
+        /// <param name="fname">Teacher first name</param>
+        /// <param name="lname">Teacher last name</param>
+        /// <param name="salary">Teacher salary</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult Update(int id, string fname, string lname,  decimal salary)
         {
@@ -154,6 +163,12 @@ namespace assign4_n01446543.Controllers
             return RedirectToAction("GetShow/" + id);
         }
 
+
+        /// <summary>
+        /// View for updating teacher, displays teachers current information in input fields
+        /// </summary>
+        /// <param name="id">teacher id</param>
+        /// <returns>View of update page</returns>
         [HttpGet]
         public ActionResult Update(int id)
         {
