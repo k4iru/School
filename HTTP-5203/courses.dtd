@@ -1,0 +1,12 @@
+<!ELEMENT courses (course*)>
+<!ELEMENT course (name, code, instructor, dayofweek, timestart, timeend, labstart, labend)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT instructor (first, last)>
+<!ELEMENT dayofweek (#PCDATA)>
+<!ELEMENT timestart (#PCDATA)>
+<!ELEMENT timeend (#PCDATA)>
+<!ELEMENT labstart (#PCDATA)>
+<!ELEMENT labend (#PCDATA)>
+<!ELEMENT first (#PCDATA)>
+<!ELEMENT last (#PCDATA)>

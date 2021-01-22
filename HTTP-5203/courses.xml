@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE people SYSTEM "courses.dtd">
+<courses>
+	<course>
+		<name>Security and Quality Assurance</name>
+		<code>HTTP-5201</code>
+		<instructor>
+			<first>Sean</first>
+			<last>Doyle</last>
+		</instructor>
+		<dayofweek>3</dayofweek>
+		<timestart>14:25</timestart>
+		<timeend>15:15</timeend>
+		<labstart>15:20</labstart>
+		<labend>17:05</labend>
+	</course>
+	<course>
+		<name>Web Application Development 2</name>
+		<code>HTTP-5202</code>
+		<instructor>
+			<first>Nithya</first>
+			<last>Thayananthan</last>
+		</instructor>
+		<dayofweek>3</dayofweek>
+		<timestart>9:50</timestart>
+		<timeend>11:35</timeend>
+		<labstart></labstart>
+		<labend></labend>
+	</course>
+	<course>
+		<name>XML and Web Services</name>
+		<code>HTTP-5203</code>
+		<instructor>
+			<first>Joanna</first>
+			<last>Kommala</last>
+		</instructor>
+		<dayofweek>4</dayofweek>
+		<timestart>11:40</timestart>
+		<timeend>12:30</timeend>
+		<labstart></labstart>
+		<labend></labend>
+	</course>
+	<course>
+		<name>Mobile Development</name>
+		<code>HTTP-5204</code>
+		<instructor>
+			<first>Christine</first>
+			<last>Bittle</last>
+		</instructor>
+		<dayofweek>4</dayofweek>
+		<timestart>14:25</timestart>
+		<timeend>15:25</timeend>
+		<labstart>15:30</labstart>
+		<labend>16:10</labend>
+	</course>
+	<course>
+		<name>Professional Practice</name>
+		<code>HTTP-5205</code>
+		<instructor>
+			<first>Christie</first>
+			<last>Knapp</last>
+		</instructor>
+		<dayofweek></dayofweek>
+		<timestart></timestart>
+		<timeend></timeend>
+		<labstart></labstart>
+		<labend></labend>
+	</course>
+	<course>
+		<name>Web Information Architecture</name>
+		<code>HTTP-5206</code>
+		<instructor>
+			<first>Bernard</first>
+			<last>Monette</last>
+		</instructor>
+		<dayofweek>2</dayofweek>
+		<timestart>9:50</timestart>
+		<timeend>11:35</timeend>
+		<labstart></labstart>
+		<labend></labend>
+	</course>
+</courses>
