@@ -1,5 +1,6 @@
 //LAB 1-1: LOCATION OBJECT & ROUTING
-alert("Lab 1 - 1");//DELETE ONCE CONNECTED.
+let getLink = location.search;
+let output = document.getElementById('output');
 
 //#### CONTENT FOR HOME PAGE ==== - BACKGROUND IS white
 var contentHome = "<h3>Welcome to our website!</h3>";
@@ -16,3 +17,15 @@ var contentAbout = "<h3>About Computer Corp</h3>";
 contentAbout += "<p>We have been around a long time, so we know what we're doing.</p>";
 contentAbout += "<p><h4>Customer Feedback</h4><q>You're the only computer company I trust</q>&mdash;Ernst Blofeld</p>";
 //==== END OF CONTENT FOR ABOUT US PAGE ####
+
+if(getLink === "?home") {
+    output.innerHTML = contentHome;
+    output.style.backgroundColor = 'white';
+
+} else if (getLink === "?products") {
+    output.innerHTML = contentProducts;
+    output.style.backgroundColor = 'red';
+} else if (getLink === "?about") {
+    output.innerHTML = contentAbout;
+    output.style.backgroundColor = 'green';
+}
