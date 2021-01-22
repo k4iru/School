@@ -22,18 +22,21 @@ window.onload = function(){
 
 		// grab form elements
 		for (let i = 1; i <= 3; i++ ) {
+			// validate here for empty names, phone numbers that dont follow a regex etc
 			let name = form.elements[`name${i}`].value;
 			let phone = form.elements[`phone${i}`].value;
 			let person = new Person(name, phone);
 			faveThree.push(person);
 		}
 
+		// get each persons contact details and add it to the fragment
 		faveThree.forEach (person => {
 			let li = document.createElement('li');
 			li.textContent = person.contactDetails();
 			fragment.appendChild(li);
 		});
 
+		// add the fragment onto the ol element
 		favelist.appendChild(fragment);
 
 		form.style.display = 'none';
