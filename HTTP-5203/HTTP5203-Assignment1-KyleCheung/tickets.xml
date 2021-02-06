@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tickets.xsd">
     <ticket>
-        <ticketId></ticketId>
-        <dateOfIssue></dateOfIssue>
-        <status></status>
-        <userId></userId>
-        <subject></subject>
-        <description></description>
+        <ticketId>t0001</ticketId>
+        <dateOfIssue>2021-02-06 22:20:30.087</dateOfIssue>
+        <status>resolved</status>
+        <userId>0002</userId>
+        <subject>computer turns on and off randomly</subject>
+        <description>computer will turn on and off randomly.</description>
+        <supportMessages>
+            <message time="2021-02-06 23:20:30.087">
+                <userId>0001</userId>
+                <content>Make sure the power cable is pushed in all the way</content>
+            </message>
+            <message time="2021-02-06 23:25:30.087">
+                <userId>0002</userId>
+                <content>Thank you, that fixed it</content>
+            </message>
+        </supportMessages>
+    </ticket>
+    <ticket>
+        <ticketId>t0002</ticketId>
+        <dateOfIssue>2021-02-06 23:20:30.087</dateOfIssue>
+        <status>open</status>
+        <userId>0002</userId>
+        <subject>can't access blackboard website</subject>
+        <description>trying to open the blackboard website gives me and error saying that the site is not providing a valid certificate.</description>
         <supportMessages>
             <message time="">
                 <userId></userId>
