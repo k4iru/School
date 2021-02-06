@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="tickets.xsd">
+    <ticket>
+        <ticketId></ticketId>
+        <dateOfIssue></dateOfIssue>
+        <status></status>
+        <userId></userId>
+        <subject></subject>
+        <description></description>
+        <supportMessages>
+            <message time="">
+                <userId></userId>
+                <content></content>
+            </message>
+        </supportMessages>
+    </ticket>
+</tickets>
