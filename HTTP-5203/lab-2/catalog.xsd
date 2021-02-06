@@ -22,8 +22,8 @@
                     <xs:element name="image" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:simpleContent>
-                          <xs:extension base="xs:string">
-                            <xs:attribute name="name"  type="xs:string" use="required" />
+                          <xs:extension base="xs:anyURI">
+                            <xs:attribute name="name"  type="xs:anyURI" use="required" />
                           </xs:extension>
                         </xs:simpleContent>
                       </xs:complexType>
@@ -34,7 +34,7 @@
               <xs:element name="sizes" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="size" type="xs:string"/>
+                    <xs:element name="size" type="xs:string" maxOccurs="unbounded"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
