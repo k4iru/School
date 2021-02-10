@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE people SYSTEM "courses.dtd">
+<?xml-stylesheet href="courses.xsl" type="text/xsl"?>
 <courses>
 	<course>
 		<name>Security and Quality Assurance</name>
@@ -10,9 +10,7 @@
 		</instructor>
 		<dayofweek>3</dayofweek>
 		<timestart>14:25</timestart>
-		<timeend>15:15</timeend>
-		<labstart>15:20</labstart>
-		<labend>17:05</labend>
+		<timeend>17:05</timeend>
 	</course>
 	<course>
 		<name>Web Application Development 2</name>
@@ -24,8 +22,6 @@
 		<dayofweek>3</dayofweek>
 		<timestart>9:50</timestart>
 		<timeend>11:35</timeend>
-		<labstart></labstart>
-		<labend></labend>
 	</course>
 	<course>
 		<name>XML and Web Services</name>
@@ -37,8 +33,6 @@
 		<dayofweek>4</dayofweek>
 		<timestart>11:40</timestart>
 		<timeend>12:30</timeend>
-		<labstart></labstart>
-		<labend></labend>
 	</course>
 	<course>
 		<name>Mobile Development</name>
@@ -49,9 +43,7 @@
 		</instructor>
 		<dayofweek>4</dayofweek>
 		<timestart>14:25</timestart>
-		<timeend>15:25</timeend>
-		<labstart>15:30</labstart>
-		<labend>16:10</labend>
+		<timeend>16:10</timeend>
 	</course>
 	<course>
 		<name>Professional Practice</name>
@@ -76,7 +68,5 @@
 		<dayofweek>2</dayofweek>
 		<timestart>9:50</timestart>
 		<timeend>11:35</timeend>
-		<labstart></labstart>
-		<labend></labend>
 	</course>
 </courses>
