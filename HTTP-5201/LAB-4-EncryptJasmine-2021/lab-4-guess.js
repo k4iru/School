@@ -18,7 +18,8 @@ function guessNum(guess) {
     } else if (guess === "") {
         returnMessage = noInput;
         
-    } else if (guess <= 1 || guess >= 10) {
+        // changed so that outOfRange only triggers for numbers larger than 10 or smaller than 1
+    } else if (guess < 1 || guess > 10) {
         returnMessage = outOfRange;
         
     } else {
