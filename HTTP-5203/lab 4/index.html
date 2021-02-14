@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Lab 4</title>
+        <script src="scripts/script.js"></script>
+    </head>
+    <body>
+        <h1>Lab 4 Books</h1>
+        <form method="post" name="book_form">
+            <label for="book">Book Title: </label>
+            <input type="text" name="book" id="book" />
+            <label for="fname">First Name: </label>
+            <input type="text" name="fname" id="fname" />
+            <label for="mname">Middle Name: </label>
+            <input type="text" name="mname" id="mname" />
+            <label for="lname">Last Name: </label>
+            <input type="text" name="lname" id="lname" />
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title" />
+            <input type="submit" value="submit">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody id="tableResults">
+
+            </tbody>
+        </table>
+    </body>
+</html>
