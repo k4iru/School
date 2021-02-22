@@ -1,0 +1,36 @@
+﻿@model IEnumerable<http5203_lab5_kylecheung.Models.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h1>Book</h1>
+
+<div>
+    <a class="btn btn-default" asp-action="Create">Add a book</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Author Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(m => item.id)</td>
+            <td>@Html.DisplayFor(m => item.bookTitle)</td>
+            <td>@Html.DisplayFor(m => item.first)</td>
+            <td>@Html.DisplayFor(m => item.middle)</td>
+            <td>@Html.DisplayFor(m => item.last)</td>
+            <td>@Html.DisplayFor(m => item.authorTitle)</td>
+        </tr>
+        }
+    </tbody>
+</table>

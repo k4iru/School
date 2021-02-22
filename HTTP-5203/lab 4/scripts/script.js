@@ -14,7 +14,6 @@ xml.onload = function() {
         createPerson();
         generateTable();
 
-
         // prevent default form behaviour
         return false;
     }
