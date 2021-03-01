@@ -1,0 +1,43 @@
+body {
+    font-family: 'Courier New', monospace;
+}
+.login-form {
+    display: inline-block;
+    padding: 0.5em;
+    background-color: #e9ebca;
+}
+
+.login-form_border {
+    border: dashed;
+}
+
+.login-form__fieldset {
+    margin-right: 6em;
+}
+
+.form__label {
+    width: 200px;
+    text-align: right;
+    background-color: lightgrey;
+
+}
+
+.form__label_invalid {
+    background-color: red;
+}
+
+.form__submit {
+    margin: 1em;
+    padding: 0.2em 0.5em;
+    border-radius: 2px;
+    background-color: white;
+    border-color: lightblue;
+}
+
+.output_hidden {
+    display: none;
+}
+
+.output__content {
+    font-weight: bold;
+}

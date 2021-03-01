@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">Login Page</h1>
+    </header>
+    <section id="login-form" class="login-form login-form_border">
+        <fieldset class="login-form__fieldset">
+            <legend class="login-form__legend">User Authentication</legend>
+            <form class="form">
+                <div class="form__username">
+                    <label class="form__label" for="username">Username:</label>
+                    <input class="form__input" name="username" id="username" >
+                </div>
+                <div class="form__password">
+                    <label class="form__label" for="password">Password:</label>
+                    <input class="form__input" type="password" name="password" id="password">
+                </div>
+                <input class="form__submit" type="submit" value="Log in">
+            </form>
+        </fieldset>
+    </section>
+    <section id="output" class="output output_hidden">
+        <p class="output__group">
+            User Name:<span class="output__content" id="uOut"></span>   
+        </p>
+        <p class="output__group">
+            Password:<span class="output__content" id="pOut"></span>
+        </p>
+    </section>
+</body>
+
+</html>
