@@ -2,41 +2,42 @@ let form = document.forms[0];
 let loginForm = document.getElementById("login-form");
 let usernameInput = document.getElementById("username");
 let passwordInput = document.getElementById("password");
+
+// output div
 let output = document.getElementById("output");
-let uOut = document.getElementById("uOut");
-let pOut = document.getElementById("pOut");
 
 form.onsubmit = function () {
     "use strict";
     let username = form.elements.username.value;
     let password = form.elements.password.value;
 
+    let res = checkLogin(username, password);
+    let outMessage = "";
 
-    // username validation
-    if (username === "") {
+    // reset error highlight
+    usernameInput.classList.remove("form__label_invalid");
+    passwordInput.classList.remove("form__label_invalid");
+
+    // correct username and password
+    if (res === true) {
+        outMessage = "Welcome back!";
+    }
+    // no username
+    else if (res === "No username entered.") {
         usernameInput.classList.add("form__label_invalid");
-    } else {
-        usernameInput.classList.remove("form__label_invalid");
+        outMessage = res;
     }
-
-    // password validation
-    if (password === "") {
+    // no password
+    else if (res === "No password entered.") {
         passwordInput.classList.add("form__label_invalid");
+        outMessage = res;
     } else {
-        passwordInput.classList.remove("form__label_invalid");
+        // incorrect username/password
+        outMessage = res;
     }
 
-    // hide / show output
-    if (username === "" || password === "") {
-        output.classList.add("output_hidden");
-        loginForm.classList.remove("login-form_border");
-    } else {
-        output.classList.remove("output_hidden");
-        loginForm.classList.add("login-form_border");
-    }
-
-    uOut.innerText = username;
-    pOut.innerText = password;
+    output.classList.remove("output_hidden");
+    output.innerHTML = outMessage;
 
     return false;
 };
