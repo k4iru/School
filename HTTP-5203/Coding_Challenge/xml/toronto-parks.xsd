@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="Locations">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="Location" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="LocationID" type="xs:integer" />
+                        <xs:element name="LocationName" type="xs:string" />
+                        <xs:element name="Address" type="xs:string" />
+                        <xs:element name="PostalCode" type="xs:string" minOccurs="0"/>
+                        <xs:element name="PhoneNumber" type="xs:string" minOccurs="0"/>
+                        <xs:element name="Facilities">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Facility" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="FacilityID" type="xs:string" />
+                                                <xs:element name="FacilityType" type="xs:string" />
+                                                <xs:element name="FacilityName" type="xs:string"  minOccurs="0"/>
+                                                <xs:element name="FacilityDisplayName" type="xs:string" />
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Intersections" minOccurs="0">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Intersection" type="xs:string" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
