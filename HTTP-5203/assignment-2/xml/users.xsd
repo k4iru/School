@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="users">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="user" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="userId" type="xs:integer" />
+                            <xs:element name="userName" type="xs:string" />
+                            <xs:element name="password" type="xs:string" />
+                            <xs:element name="accountCreation" type="xs:dateTime" />
+                            <xs:element name="userGroup">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="admin" />
+                                        <xs:enumeration value="client" />
+                                        <xs:enumeration value="support" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="name">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="first" />
+                                        <xs:element name="last" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

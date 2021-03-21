@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
+    <user>
+        <userId>0001</userId>
+        <userName>kcheu</userName>
+        <password>9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c</password>
+        <accountCreation>2021-02-06T22:07:31.713</accountCreation>
+        <userGroup>admin</userGroup>
+        <name>
+            <first>kyle</first>
+            <last>cheung</last>
+        </name>
+    </user>
+    <user>
+        <userId>0002</userId>
+        <userName>cli1</userName>
+        <password>d258d3288a595e363c28ba7e62f2b33f734a64557016fa141fa04958f8b7543d</password>
+        <accountCreation>2021-02-04T20:08:24.130</accountCreation>
+        <userGroup>client</userGroup>
+        <name>
+            <first>john</first>
+            <last>doe</last>
+        </name>
+    </user>
+</users>
