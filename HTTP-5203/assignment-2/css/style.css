@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.page-container {
+    display: block;
+    margin: auto;
+    max-width: 600px;
+    height: 500px;
+    background-color: red;
+}
+
