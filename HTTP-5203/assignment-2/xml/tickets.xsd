@@ -18,7 +18,7 @@
                                         <xs:element name="message" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="userId" type="xs:integer" />
+                                                    <xs:element name="userIdComment" type="xs:integer" />
                                                     <xs:element name="content" type="xs:string" />
                                                 </xs:sequence>
                                                 <xs:attribute name="time" type="xs:dateTime" use="required" />

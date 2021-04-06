@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
-    <user>
-        <userId>0001</userId>
-        <userName>kcheu</userName>
-        <!-- password is "password" -->
-        <password>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</password>
-        <accountCreation>2021-02-06T22:07:31.713</accountCreation>
-        <userGroup>admin</userGroup>
-        <name>
-            <first>kyle</first>
-            <last>cheung</last>
-        </name>
-    </user>
-    <user>
-        <userId>0002</userId>
-        <userName>cli1</userName>
-        <!-- password is "client" -->
-        <password>948fe603f61dc036b5c596dc09fe3ce3f3d30dc90f024c85f3c82db2ccab679d</password>
-        <accountCreation>2021-02-04T20:08:24.130</accountCreation>
-        <userGroup>client</userGroup>
-        <name>
-            <first>john</first>
-            <last>doe</last>
-        </name>
-    </user>
+  <user>
+    <userId>0001</userId>
+    <userName>kcheu</userName>
+    <!-- password is "password" -->
+    <password>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</password>
+    <accountCreation>2021-02-06T22:07:31.713</accountCreation>
+    <userGroup>admin</userGroup>
+    <name>
+      <first>kyle</first>
+      <last>cheung</last>
+    </name>
+  </user>
+  <user>
+    <userId>0002</userId>
+    <userName>cli1</userName>
+    <!-- password is "client" -->
+    <password>948fe603f61dc036b5c596dc09fe3ce3f3d30dc90f024c85f3c82db2ccab679d</password>
+    <accountCreation>2021-02-04T20:08:24.130</accountCreation>
+    <userGroup>client</userGroup>
+    <name>
+      <first>john</first>
+      <last>doe</last>
+    </name>
+  </user>
+  <user>
+    <userId>0003</userId>
+    <userName>newAccount</userName>
+    <password>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</password>
+    <accountCreation>2021-04-05T23:10:27</accountCreation>
+    <userGroup>client</userGroup>
+    <name>
+      <first>Max</first>
+      <last>Power</last>
+    </name>
+  </user>
 </users>
