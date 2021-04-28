@@ -1,1 +1,59 @@
 ﻿/*ASSIGNMENT 4 WEB COMPONENTS*/
+*::before, *::after, * {
+    padding: 0;
+    margin: 0;
+
+    /* otherwise borders will mess up sizing */
+    box-sizing: border-box;
+}
+:root {
+  --main-blue: #04235b;
+  --light-blue: #00a2e8;
+  --gold: #d6b00b;
+  --black: #000;
+  --white: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-family: Garamond;
+  background-color: var(--main-blue);
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+  border: 5px solid var(--gold);
+}
+
+.banner {
+  width: 325px;
+  border-radius: 20px;
+}
+
+.text {
+    line-height: 0.9em;
+    padding: 4px 40px;
+    text-align: left;
+    width: 60%;
+    font-size: 22px;
+    background-color: var(--white);
+}
+
+.slogan {
+    margin: 0;
+    text-transform: uppercase;
+    color: var(--light-blue);
+    font-size: 20px;
+}
+
+.black {
+    background-color: var(--black);
+}
+.white {
+    background-color: var(--white);
+}

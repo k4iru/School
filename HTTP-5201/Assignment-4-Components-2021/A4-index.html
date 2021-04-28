@@ -1,38 +1,135 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Assignment 4</title>
-<link rel="stylesheet" type="text/css" href="A4-components.css">
-
-</head>
-<body>
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Assignment 4</title>
+    <link rel="stylesheet" type="text/css" href="A4-components.css" />
+  </head>
+  <body>
     <h1>Web Components</h1>
 
     <h2>Four W3C Standards</h2>
-    <div> 
-        <ol>    
-            <li>The Shadow Dom</li>
-            <li>Templates</li>
-            <li>Custom Elements</li>
-            <li>HTML Imports</li>
-        </ol>        
+    <div>
+      <ol>
+        <li>The Shadow Dom</li>
+        <li>Templates</li>
+        <li>Custom Elements</li>
+        <li>HTML Imports</li>
+      </ol>
     </div>
 
+    <template>
+      <link rel="stylesheet" href="A4-components.css" />
+      <div class="container">
+        <img class="banner" src="humber-logo.png" />
+
+        <p class="text">
+          <span id="days-left"></span> day(s) left in the semester.
+        </p>
+
+        <p class="slogan">
+          <span class="black">we are</span><span class="white">futuristic</span>
+        </p>
+      </div>
+    </template>
+
+    <humber-countdown>
+      <span slot="days">Test</span>
+    </humber-countdown>
+
     <h2>Paragraph 1</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
 
     <h2>Paragraph 2</h2>
-    <p>Vivamus orci enim, pharetra ac porttitor eget, pretium a tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper arcu id dolor tempus, sit amet rutrum enim euismod. Sed lacinia id purus sed convallis. Nulla euismod massa rutrum rutrum luctus. Etiam sit amet ante diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui, efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi. Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.</p>
-
-</body>
+    <p>
+      Vivamus orci enim, pharetra ac porttitor eget, pretium a tellus. Lorem
+      ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper arcu id
+      dolor tempus, sit amet rutrum enim euismod. Sed lacinia id purus sed
+      convallis. Nulla euismod massa rutrum rutrum luctus. Etiam sit amet ante
+      diam. Cum sociis natoque penatibus et magnis dis parturient montes,
+      nascetur ridiculus mus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+      consequat elementum scelerisque. Phasellus placerat sem ac risus porttitor
+      sagittis. Maecenas mattis eleifend pellentesque. Integer dui dui,
+      efficitur ut dui quis, vestibulum pellentesque mi. Sed tincidunt, sem id
+      mollis pharetra, neque sem posuere arcu, ut consequat augue justo id nisi.
+      Maecenas leo lacus, mollis pretium eleifend vel, efficitur sed orci. Etiam
+      libero sapien, sodales pulvinar imperdiet a, pretium vel lectus.
+    </p>
+  </body>
+  <script src="A4-components-module.js" defer></script>
+  <script src="A4-components-logic.js" defer></script>
 </html>
