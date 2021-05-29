@@ -22,11 +22,11 @@ async function init() {
  */
 async function getEmployees() {
   try {
-    const response = fetch(
+    const response = await fetch(
       "http://sandbox.bittsdevelopment.com/code1/fetchemployees.php"
     );
 
-    const data = await (await response).json();
+    const data = await response.json();
     console.log(data);
     return data;
   } catch (err) {
@@ -34,10 +34,9 @@ async function getEmployees() {
   }
 }
 
-
 /**
  * Returns a url string for the employee profile picture
- * @param {number} id 
+ * @param {number} id
  * @returns {string}
  */
 function getPictureUrl(id) {
@@ -46,7 +45,6 @@ function getPictureUrl(id) {
 
 // render employee roles returns a f
 function renderRoles(roles) {
-
   // create fragment to avoid working directly with DOM
   let fragment = document.createDocumentFragment();
 
@@ -55,7 +53,7 @@ function renderRoles(roles) {
   container.className = "role__container";
 
   // add each role
-  roles.forEach(role => {
+  roles.forEach((role) => {
     const rolename = role.rolename;
 
     let roleText = document.createTextNode(rolename);
@@ -63,21 +61,18 @@ function renderRoles(roles) {
     roleNode.appendChild(roleText);
     roleNode.className = `${rolename} role`;
     container.appendChild(roleNode);
-
   });
 
   fragment.appendChild(container);
 
   return fragment;
-
 }
 
 /**
  * Renders each employee
- * @param {Employee Object} e 
+ * @param {Employee Object} e
  */
 function renderEmployee(e) {
-
   // create fragment to contain employees to avoid working directly with DOM until needed
   let fragment = document.createDocumentFragment();
 
@@ -103,7 +98,9 @@ function renderEmployee(e) {
   container.appendChild(profile);
 
   // employee name
-  let nameText = document.createTextNode(e.employeefname + " " + e.employeelname);
+  let nameText = document.createTextNode(
+    e.employeefname + " " + e.employeelname
+  );
   let name = document.createElement("h1");
   name.appendChild(nameText);
   container.appendChild(name);
