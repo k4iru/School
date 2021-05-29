@@ -1,16 +1,91 @@
-*, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: content-box;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+#root {
+  display: flex;
+  width: 100%;
 }
 
 img {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
+  display: block;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+h1 {
+  padding-top: 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.1em;
+  padding: 12px 0;
+  overflow: auto;
+  flex-grow: 1;
 }
 
 .container {
-    display: inline-block;
-    width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 250px;
+  position: relative;
+  border: 1px solid black;
+  padding: 12px;
+  height: 400px;
+}
+
+.crown {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.role__container {
+  margin-top: auto;
+  color: #fff;
+}
+
+.role {
+  padding: 2px 5px;
+  margin-right: 6px;
+}
+
+.Coding {
+  background-color: #b4adea;
+}
+
+.Communications {
+  background-color: #fdfff7;
+  color: black;
+}
+
+.Eating {
+  background-color: #ffed65;
+}
+
+.Writing {
+  background-color: #fbcaef;
+}
+
+.Gaming {
+  background-color: #e3d3e4;
+}
+
+@media only screen and (max-width: 900px) {
+  #root {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+  }
 }
