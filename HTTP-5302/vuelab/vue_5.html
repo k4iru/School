@@ -7,13 +7,15 @@
 		<style>
 			.box{width:200px; height:200px; background:green; border:2px solid black; text-align:center; line-height:200px; color:white;}
 			.hidden{display:none;}
+			.newBox{width:100px; background:red}
 		</style>
 	</head>
 	<body>
 	
 	<div id="app">
 		<div v-bind:class="{box:true, hidden:boxHidden}">{{message}}</div>
-		<button v-on:click="showhide();">Click</button>
+		<button v-on:click="showhide();"><span v-if="boxHidden">Show</span><span v-else>Hide</span></button>
+		<div v-bind:class="{newBox:true}" v-on:mouseover="mouseover" v-bind:style="{height: computedHeight}"></div>
 	</div>
 	
 	<script>
@@ -23,9 +25,13 @@
 		data:{
 			boxHeight:200,
 			boxHidden : false,
-			message  : 'Make me disappear!'
+			message  : 'Make me disappear!',
+			height: 100,
 		},
 		methods:{
+			mouseover: function(){
+				this.height += 10;
+			},
 			showhide : function(){
 				console.log(this.boxHidden);
 				if(this.boxHidden){
@@ -34,6 +40,11 @@
 					this.boxHidden=true;	
 				}
 			}
+		},
+		computed: {
+			computedHeight: function() {
+				return `${this.height}px`;
+			}
 		}
 		
 	});
@@ -41,6 +52,10 @@
 	<!--
 		Step 1: Read the code above
 		Step 2: What will happen when you click the button?
+
+		the box will be hidden
+
+
 		Step 3: Run it and find out!
 		
 		v-on:event_handler="method_name(?arg1, ?arg2..)"
